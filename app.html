@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta name="author" description = "Miracle King Hesed">
+            <meta name="description" content="A music website. That's Pretty much all it is.">
+    <title>Musicao</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="shortcut icon" href="./css/img/play-white.ico" type="image/x-icon">
+    <link rel="stylesheet" media="max-width: 450px" href="./css/min.css" />
+
+    <style>
+      
+
+        
+    </style>
+</head>
+
+<body>
+    <main class="container">
+        <div class="main-section">
+            <div class="song-screen-container">
+                            <div class="song-screen">
+                <img class="top-gradient" src="./img/top_gradient.png" alt="top_gradient"/>
+                        <div class="song-main-case ">
+                                <div class="image-case"></div>
+                            <div class="song-text-case">
+                                <h4 id="title-main" class="song-title">Freedom</h4>
+                                <p id="author-main" class="author">By Saturn</p>
+                            </div>
+                            <img class="burger" width="25" height="25" src="./img/burger.png" alt="burger"/>
+                </div>
+                <img class="bottom-gradient" src="./img/bottom_gradient_II.png" alt="bottom_gradient"/>
+            </div>
+            </div>
+            <div class="music-controls">
+                <div class="music-buttons">
+                    <img class="backward-button" src="./img/backward-white.png" alt="backward"/>
+                    <span class="play-button"><img src="./img/play-white.png" alt="play"/></span>
+                    <img class="forward-button" src="./img/forward-white.png" alt="forward"/>
+                </div>
+                <div class="other-controls">
+                    <div class="start-time">
+                        <span>0:00</span>
+                    </div>
+
+                    <div class="bar-and-time-container">
+                        <div id="bar"></div>
+                        <div id="current-time"></div>
+                      </div>
+
+                      <div class="end-time">
+                        <span>6:25</span>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="song-list">
+            <h2>Songs</h2>
+            <div class="song-list-container">
+                <div class="song-case">
+                    <div>
+                        <h4 class="song-title">Freedom</h4>
+                        <p class="author">By Saturn</p>
+                    </div>
+                   <div>
+                    <span class="total-time-of-song">6:25</span>
+                   </div>
+                </div>
+            
+            </div>
+        </div>
+
+        <div class="modal-container">
+
+        </div>
+
+    </main>
+    <script src="./js/main.js"></script>
+    <script>
+
+             const songsInObject = [
+                {
+                    imageCover: './img/hillsong_image_cover.jpg',
+                    title:'All things new',
+                    author: 'Hillsong United',
+                    source: 'file:///C:/Users/USER/Documents/AFTERHNG/music%20app/music/all_things_new.m4a',
+                    type:"audio/mpeg"
+                },
+                {
+                    imageCover: './img/original.jpg',
+                    title:'All original movie',
+                    author: 'Anonymous',
+                    source: 'file:///C:/Users/USER/Documents/AFTERHNG/music%20app/music/voice.mp3',
+                    type:"audio/mpeg"
+                },
+                {
+                    imageCover: './img/aria_camp.jpg',
+                    title:'what we need',
+                    author: 'arie camp',
+                    source: 'file:///C:/Users/USER/Documents/AFTERHNG/music%20app/music/arie_camp_what_we_need_ft._alena_pitts_aac_84617.m4a',
+                    type:"audio/mpeg"
+                },
+                {
+                    imageCover: './img/image_cover_default.png',
+                    title:'I need you to love me',
+                    author: 'Balow Girl',
+                    source: 'file:///C:/Users/USER/Documents/AFTERHNG/music%20app/music/barlowgirl_i_need_you_to_love_me_video_aac_72335.m4a',
+                    type:"audio/mpeg"
+                },
+                {
+                    imageCover: './img/coconut+curry+chicken+meatballs.jpg',
+                    title:'Chicken meatballs with curry sauce',
+                    author: 'Anonymous',
+                    source: 'file:///C:/Users/USER/Documents/AFTERHNG/music%20app/music/Chicken_Meatballs_with_Coconut_Curry_Sauce_Recipe(360p).mp3',
+                    type:"audio/mpeg"
+                },
+                {
+                    imageCover: './img/merlin.jpg',
+                    title:'Merlin',
+                    author: 'Anonymous',
+                    source: 'file:///C:/Users/USER/Documents/AFTERHNG/music%20app/music/merlin_full_theme_song_aac_65581.m4a',
+                    type:"audio/mpeg"
+                },
+                {
+                    imageCover: './img/mets-wallpaper-13517-13929-hd-wallpapers.jpg',
+                    title:'Comfort and Joy',
+                    author: 'Tasha Layton',
+                    source: 'file:///C:/Users/USER/Documents/AFTERHNG/music%20app/music/tasha_layton_comfort_and_joy_official_lyric_video_aac_2274.m4a',
+                    type:"audio/mpeg"
+                },
+                {
+                    imageCover: './img/Zui_Hao_De_Xing_Yun_image_cover.jpg',//_最好的幸运_-_李凯馨_OST._My_Love,_Enlighten_Me_《暖暖请多指教》_PINYIN_LYRIC(128k)
+                    title:'Zui_Hao_De_Xing_Yun',
+                    author: 'Anonymous',
+                    source: 'file:///C:/Users/USER/Documents/AFTERHNG/music%20app/music/Zui_Hao_De_Xing_Yun_%E6%9C%80%E5%A5%BD%E7%9A%84%E5%B9%B8%E8%BF%90_-_%E6%9D%8E%E5%87%AF%E9%A6%A8_OST._My_Love,_Enlighten_Me_%E3%80%8A%E6%9A%96%E6%9A%96%E8%AF%B7%E5%A4%9A%E6%8C%87%E6%95%99%E3%80%8B_PINYIN_LYRIC(128k).m4a',
+                    type:"audio/mpeg"
+                }
+            ]
+
+            //built bindings
+            let audio;
+            let incrementDecrementValue = 0;
+            let songsToDisplayArray = [];
+            
+                
+
+            //Element Bindings
+            const title = document.querySelector('#title-main');
+            const author = document.querySelector('#author-main');
+            const play = document.querySelector('.play-button');
+            const imageCase = document.querySelector('.image-case');
+            const imageCover = document.querySelector('.song-screen');
+            const currentTime = document.querySelector('#current-time'); 
+            const backwardButton = document.querySelector('.backward-button');
+            const forwardButton = document.querySelector('.forward-button');
+            const songListContainer = document.querySelector('.song-list-container');
+            const modalContainer =  document.querySelector('.modal-container');
+            
+
+
+
+            //Haburger
+            const burger = document.querySelector('.burger');
+            const songList = document.querySelector('.song-list');
+
+            burger.addEventListener("click", () => {
+                songList.classList.toggle("song-list-out");
+            });
+
+
+            let localTokenData = 'SFSIFNASFKASKLKLDGDFGDVVVV';
+            window.onload = () => {
+                if(localStorage.getItem('serialToken') === localTokenData){
+                    modalContainer.style.display = 'none';
+                    return;
+                }else{
+                    modalContainer.style.display = 'block';
+                    modalContainer.innerHTML = `
+                    <div class="modal">
+                        <div class="intro-image"></div>
+                        <div class="intro-details">
+                            <p>version 1.0</p>
+                            <p>Miplay is simply a music website that allows you to play music online.</p>
+                            <div class="button-case"><button class="enter">Enter</button></div>
+                        </div>
+                    </div>
+                    `;
+                    }
+
+                    document.querySelector('.enter').addEventListener('click', function(){
+                    localStorage.setItem('serialToken', localTokenData)
+                    modalContainer.style.display = 'none';
+                });
+            }
+
+
+
+            const songMapToSide = () => {
+
+                
+            var content = '';
+            for (let i = 0; i < songsInObject.length;i++) {
+            content +=`
+                    <div class="song-case" onclick="testing()" data-id=${songsInObject[i].title.replace(/\W/g, "-")}>
+                        <div>
+                            <h4 class="song-title title-in-list">${songsInObject[i].title}</h4>
+                            <p class="author  author-in-list">${songsInObject[i].author}</p>
+                        </div>
+                    <div>
+                        <span class="total-time-of-song">6:25</span>
+                    </div>
+                    </div>`;
+            }
+
+
+            songListContainer.innerHTML = content;
+      
+            }
+            songMapToSide();
+
+            
+
+            const titleInList = document.querySelector('.title-in-list');
+            const authorInList = document.querySelector('.author-in-list');
+
+            const testing = () => {
+                const thisSongCase = document.querySelector('.song-case');
+                console.log(thisSongCase.dataset);
+            }
+
+
+
+
+            const imageCoverFunction = (binding, url) => {
+                binding.style.background = `url(${url})`;
+                binding.style.backgroundPosition = 'center';
+                binding.style.backgroundSize = 'cover';
+                binding.style.backgroundRepeat = 'no-repeat';
+            }
+            
+            const windowOnload = (arr) => {
+                if(!arr){
+                    title.textContent = songsInObject[0].title;
+                    author.textContent = songsInObject[0].author;
+                    //imageCoverFunction(imageCase, songsInObject[0].imageCover)
+                    imageCoverFunction(imageCover, songsInObject[0].imageCover)
+                    audio = new Audio(songsInObject[0].source);
+                }
+                else{
+                title.textContent = arr.title;
+                author.textContent = arr.author;
+                imageCoverFunction(imageCover, arr.imageCover)
+                audio = new Audio(arr.source);
+                }
+            }
+
+
+            forwardButton.addEventListener('click', incrementToNextSong);
+            backwardButton.addEventListener('click', decrementToNextSong);
+
+
+            //creating an array
+            const arr = (arr, value) => {
+                return arr[value];
+            }
+
+            function incrementToNextSong(){
+                if(!audio.paused){
+                    play.innerHTML = '<img src="./img/play-white.png" alt="play"/>';
+                    audio.pause();
+                }
+
+                incrementDecrementValue = incrementDecrementValue + 1;
+                if(songsToDisplayArray == []) songsToDisplayArray.push(arr(songsInObject,incrementDecrementValue));
+                else{
+                    songsToDisplayArray.pop();
+                    songsToDisplayArray.push(arr(songsInObject,incrementDecrementValue));
+                }
+                // console.log(songsToDisplayArray[0] != undefined);
+                if(songsToDisplayArray[0] == undefined){
+                    incrementDecrementValue === songsInObject.length-1; /*
+                    WHAT I AM DOING HERE IS THIS: IF SONGS TO ARRAY IS UNDEFINED,
+                    THE INCREMENT VALUE ABOVE SHOULD RETURN THE LAST IARRYA INDEX.
+                    But now the next thing i am to do is to return the last array element.
+                    this i will do when there is light. 
+                    */
+                    windowOnload(songsToDisplayArray[1]);// inside here post the method that will get the last array element
+                    console.log(incrementDecrementValue, 'increment');
+                    return;
+                }
+                console.log(songsToDisplayArray[0]);
+                windowOnload(songsToDisplayArray[0]);                    
+            }
+
+            function decrementToNextSong(){
+                    if(!audio.paused){
+                            play.innerHTML = '<img src="./img/play-white.png" alt="play">';
+                            audio.pause();
+                    }
+
+                    incrementDecrementValue = incrementDecrementValue - 1;
+                    if(songsToDisplayArray == []) songsToDisplayArray.push(arr(songsInObject,incrementDecrementValue));
+                    else{
+                        songsToDisplayArray.pop();
+                        songsToDisplayArray.push(arr(songsInObject,incrementDecrementValue));
+                    }
+                    windowOnload(songsToDisplayArray[0]);  
+                    console.log(songsToDisplayArray[0]);
+                    console.log(incrementDecrementValue, 'decrement');                       
+            }
+
+
+            //Moving Bar
+            function pixelPerSecond(){// this is returning approximately 2 pixels per second
+                // const val = currentAudio.duration;
+                // console.log(val, 'this is val');
+                return Number(window.getComputedStyle(bar).getPropertyValue("width").replace("px", "")) / audio.duration;
+            }
+
+            function currentTimeOnSync(){
+            if(!window.grabbing){
+                // console.log(currentAudio.currentTime); // this value keeps running and doesn't stop
+                currentTime.style.width = (audio.currentTime * pixelPerSecond()) + "px";// this is what is moving the BAR.
+            }
+            }// Ask this question on google. How to calculate the moving bar to move with the music from beginning to the 
+            // end.
+
+
+            
+
+            
+            (function onLoad(){
+                playing = setInterval(currentTimeOnSync, 1);
+                windowOnload()
+            })();
+
+
+            play.addEventListener('click', function(){
+                if(audio.paused){
+                    play.innerHTML = '<img src="./img/pause-white.png" alt="pause"/>';
+                    audio.play(); 
+                }else{
+                    play.innerHTML = '<img src="./img/play-white.png" alt="play"/>';
+                    audio.pause(); 
+                }
+                audio.addEventListener("ended", audioEnded);
+            });
+
+            
+            
+            function audioEnded(){
+            play.innerHTML = '<img src="./img/play-white.png" alt="play"/>';
+            }
+    </script>
+</body>
+
+</html>

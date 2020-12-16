@@ -1,0 +1,450 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: roboto;
+}
+
+:root{
+--custom-black: #060608;
+--custom-yellow: #dfe626;
+--bar-height:5px;
+}
+
+
+.container{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    overflow: hidden;
+}
+
+.burger{
+    display: none;
+}
+
+/*Modal*/
+.modal-container{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(51, 51, 51, 0.692);
+    z-index: 2;
+}
+
+.modal{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 400px;
+    background-color: var(--custom-black);
+    z-index: 2;
+    color: aliceblue;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+.intro-image{
+    background: url(../img/miplay.png);
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 200px;
+    border-radius: 8px 8px 0 0;
+}
+
+
+.intro-details{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    font-family: roboto;
+    font-weight: 200;
+    font-size: 16px;
+}
+
+.intro-details p{
+    padding: 5px 10px;
+    line-height: 20px;
+}
+
+.intro-details p:nth-child(1){
+    font-size: 20px;
+    color: var(--custom-yellow);
+    font-weight: 500;
+}
+
+.intro-details p:nth-child(2){
+    font-size: 20px;
+    line-height: 24px;
+}
+
+
+.button-case{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.enter{
+    outline: none;
+    border: none;
+    background-color: rgb(148, 148, 13);
+    padding: 5px 20px;
+    border-radius: 4px;
+    margin: 12px 0;
+    font-family: roboto;
+    font-size: 16px !important;
+    font-weight: 300;
+    font-size: 18px;
+}
+
+.enter:hover{
+    color: #ffffff;
+    background-color: rgb(165, 165, 16);
+}
+
+.song-list{
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.song-list::-webkit-scrollbar {
+    background: var(--custom-black);
+    z-index: 2;
+}
+
+::-webkit-scrollbar {
+    background: #d8e00f;
+    width: 15px;
+    padding: 2px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(transparent, #d8e00f);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(transparent, #d8e00f);
+}
+
+
+.song-list{
+    background-color: var(--custom-black);
+    color: #ffffff;
+    border-left: 1px solid #d8e00f;
+    padding:25px 25px ;
+}
+
+.song-list h2{
+    color: #dfe626;
+    font-size: 47px;
+    font-weight: 200;
+}
+
+.song-case{
+    position: relative;
+    display: grid;
+    grid-template-columns: 7fr 1fr;
+    font-weight: 200;
+    margin-top: 18px;
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(170, 170, 170, 0.267);
+}
+
+.song-case:hover{
+    transform: scale(1.05);
+    transition: 0.2s;
+    background:rgba(170, 170, 170, 0.322);
+}
+
+
+.song-case div:nth-child(2){
+    position: relative;
+}
+
+.song-title{
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+
+.author{
+    font-weight: 300;
+    color: rgba(170, 170, 170, 0.904);
+}
+
+
+/* .total-time-of-song{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+} */
+
+/*Main*/
+.main-section{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.song-screen{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url(../img/mets-wallpaper-13517-13929-hd-wallpapers.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    /* height: 560px; */
+}
+
+.top-gradient{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: auto;
+    
+}
+
+.song-main-case{
+    display: grid;
+    grid-template-columns: 1fr 11fr;
+    padding: 20px 25px;
+}
+
+.image-case{
+    background-image: url(../img/mets-wallpaper-13517-13929-hd-wallpapers.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-top: 4px;
+    margin-right:15px;
+    width: 65px;
+    height: 55px;
+    border: 2px solid #ffffff;
+}
+
+.song-text-case{
+   display:flex;
+   flex-direction: column;
+   z-index: 2;
+}
+
+#title-main{
+    color: rgb(237, 245, 14);
+    font-size: 30px;
+    z-index: 1;
+}
+
+#author-main{
+    color: #ffffff !important;
+    font-size: 18px;
+}
+
+.bottom-gradient{
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    z-index: 2;
+}
+
+.music-controls{
+    position: absolute;
+    bottom: -27px;
+    left: 0;
+    right: 0;
+    background-color:var(--custom-black) ;
+    display: grid;
+    grid-template-columns: 1fr 6fr;
+    height: 90px;
+    color: #ffffff;
+    z-index: 2;
+}
+
+.music-buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 12px;
+}
+
+.music-buttons img{
+    width: 15px;
+    height: 20px;
+    margin: 10px;
+}
+
+.music-buttons img:active{
+    transform: scale(1.1);
+}
+
+.other-controls{
+    display: grid;
+    grid-template-columns:1fr 9fr 1fr;
+}
+
+.start-time{
+    color: #ffffff;
+    padding: 23px 10px;
+}
+
+.end-time{
+    color: #ffffff;
+    padding: 23px 18px;
+}
+
+.bar-and-time-container{
+position: relative;
+display: flex;
+justify-items: center;
+padding: 30px 0px;
+}
+
+.bar-and-time-container #bar{
+width: 100%;
+height: var(--bar-height);
+background: #ffffff;
+border-radius: 4px;
+}
+
+#current-time{
+position:absolute;
+top: 30px;
+left: 0;
+bottom: 0;
+width: 0;
+height: var(--bar-height);
+background: #d8e00f;
+pointer-events:none;
+}
+
+.bar-and-time-container #current-time:after{
+content:"";
+width: 12px;
+height: 12px;
+background: #d8e00f;
+position: absolute;
+top: -4px;
+right: -8px;
+bottom: -4px;
+z-index: 9;
+border-radius: 50%;
+}
+
+/*other queiries: tablet, andiod, other than desktop*/
+@media(max-width:450px){
+    .modal{
+        width: 300px;
+    }
+
+    .intro-image{
+        height: 150px;
+    }
+
+    /* .main-screen{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    } */
+}
+
+@media(max-width:320px){
+    .modal{
+        width: 250px;
+    }
+
+    .intro-image{
+        height: 100px;
+    }
+}
+
+@media(max-width:280px){
+    .modal{
+        width: 230px;
+    }
+
+    .intro-image{
+        height: 100px;
+    }
+
+    .intro-details p:nth-child(2){
+        font-size: 15px;
+        line-height: 24px;
+    }
+}
+
+
+/*desktop queries*/
+@media(max-width:1117px){
+    .container{
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+    }
+}
+
+
+@media(max-width:901px){
+    .container{
+        display: grid;
+        grid-template-columns: 1.5fr 1fr;
+    }
+}
+
+@media(max-width:764px){
+    .container{
+        grid-template-columns: 1fr;
+    }
+
+    .song-list{
+        position: fixed;
+        top: 0;
+        right: -500px;
+        bottom: 0;
+        width: 300px;
+        z-index: 1;
+        transition: right 0.5s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    }
+
+    .song-list-out{
+        right: 0;
+    }
+
+    .burger{
+        display: block;
+        position: absolute;
+        top: 26px;
+        right: 25px;
+        z-index: 2;
+    }
+}
+
+/* @media(max-width:400px){
+    .main-section{
+        bottom: 0;
+    }
+} */
