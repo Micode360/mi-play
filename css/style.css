@@ -250,7 +250,7 @@ body {
 .song-text-case{
    display:flex;
    flex-direction: column;
-   z-index: 2;
+   z-index: 3;
 }
 
 #title-main{
@@ -281,7 +281,7 @@ body {
     grid-template-columns: 1fr 6fr;
     height: 90px;
     color: #ffffff;
-    z-index: 2;
+    z-index: 3;
 }
 
 .music-buttons{
@@ -316,6 +316,9 @@ body {
     padding: 23px 18px;
 }
 
+#bar{
+    cursor: pointer;
+}
 .bar-and-time-container{
 position: relative;
 display: flex;
@@ -426,12 +429,13 @@ border-radius: 50%;
         right: -500px;
         bottom: 0;
         width: 300px;
-        z-index: 1;
+        z-index: 4;
         transition: right 0.5s cubic-bezier(0.55, 0.055, 0.675, 0.19);
     }
 
     .song-list-out{
         right: 0;
+        
     }
 
     .burger{
@@ -439,7 +443,7 @@ border-radius: 50%;
         position: absolute;
         top: 26px;
         right: 25px;
-        z-index: 2;
+        z-index: 5;
     }
 }
 
