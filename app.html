@@ -21,6 +21,7 @@
     <div id="overlay"></div>
     <main class="container">
         <div class="main-section">
+         <div class="screen-for-handheld">
             <div class="song-screen-container">
                             <div class="song-screen">
                 <img class="top-gradient" src="./img/top_gradient.png" alt="top_gradient"/>
@@ -34,6 +35,7 @@
                 </div>
                 <img class="bottom-gradient" src="./img/bottom_gradient_II.png" alt="bottom_gradient"/>
             </div>
+        </div>
             </div>
             <div class="music-controls">
                 <div class="music-buttons">
@@ -128,13 +130,6 @@
                     source: 'https://www.bensound.com/bensound-music/bensound-hey.mp3',
                     type:"audio/mpeg"
                 }
-                // ,{
-                //     imageCover: './img/Zui_Hao_De_Xing_Yun_image_cover.jpg',//_最好的幸运_-_李凯馨_OST._My_Love,_Enlighten_Me_《暖暖请多指教》_PINYIN_LYRIC(128k)
-                //     title:'Zui_Hao_De_Xing_Yun',
-                //     author: 'Anonymous',
-                //     source: 'file:///C:/Users/USER/Documents/AFTERHNG/music%20app/music/Zui_Hao_De_Xing_Yun_%E6%9C%80%E5%A5%BD%E7%9A%84%E5%B9%B8%E8%BF%90_-_%E6%9D%8E%E5%87%AF%E9%A6%A8_OST._My_Love,_Enlighten_Me_%E3%80%8A%E6%9A%96%E6%9A%96%E8%AF%B7%E5%A4%9A%E6%8C%87%E6%95%99%E3%80%8B_PINYIN_LYRIC(128k).m4a',
-                //     type:"audio/mpeg"
-                // }
             ]
 
             //built bindings
@@ -147,8 +142,12 @@
 
             //Element Bindings
             const bar = document.querySelector("#bar");
-            const player = document.querySelector('.bar-and-time-container');
-            let barPosition = bar.offsetLeft;
+            const barAndTimeContainer = document.querySelector('.bar-and-time-container');
+            let barPosition = barAndTimeContainer.offsetLeft;
+
+            window.addEventListener('click',function (){
+                console.log(barPosition, 'bar container');
+            });
             let overlay = document.getElementById("overlay");
             const title = document.querySelector('#title-main');
             const author = document.querySelector('#author-main');
@@ -383,6 +382,7 @@
 
             function currentGrabTimeUpdate(event){
             let eventPageX = event.pageX || event.touches[0].pageX;
+            console.log(eventPageX, 'event page x');
             if((eventPageX - barPosition) > Number(window.getComputedStyle(bar).getPropertyValue("width").replace("px",""))){
                 currentTime.style.width = window.getComputedStyle(bar).getPropertyValue("width");
             }else if((eventPageX - barPosition) < 0){
@@ -391,6 +391,8 @@
                 currentTime.style.width = (eventPageX - barPosition) + "px";
             }
             }
+
+
 
             //this funtion id for holding or pressing the bar
             function barStart(event){

@@ -319,6 +319,7 @@ body {
 #bar{
     cursor: pointer;
 }
+
 .bar-and-time-container{
 position: relative;
 display: flex;
