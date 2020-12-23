@@ -231,9 +231,9 @@
                 PlayClickedSong(songString);
             }
 
-            const PlayClickedSong = (str) => {//[_/\*&^%$#@$^*!@#$^:"~+_+]
+            const PlayClickedSong = (str) => {
                 songsInObject.forEach((item,index) => {
-                    item.title = item.title//.replace(/\s[_+]/g, ' ').trim()
+                    item.title = item.title
                     if(item.title.includes(str)){
                         if(!audio.paused){
                             play.innerHTML = '<img src="./img/play-white.png" alt="play"/>';
