@@ -5,10 +5,10 @@
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <meta name="author" description = "Miracle King Hesed">
             <meta name="description" content="A music website. That's Pretty much all it is.">
-    <title>mi-play</title>
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="icon" href="./img/logo.png" type="image/x-icon">
-    <link rel="stylesheet" media="max-width: 450px" href="./css/min.css" />
+            <title>mi-play</title>
+            <link rel="stylesheet" href="./css/style.css">
+            <link rel="icon" href="./img/icon.ico" type="image/x-icon">
+            <link rel="stylesheet" media="max-width: 450px" href="./css/min.css" />
 
     <style>
       
@@ -134,8 +134,8 @@
 
             //built bindings
             let audio;
-            let incrementDecrementValue = 0;
-            let songsToDisplayArray = [];
+            incrementDecrementValue = 0,
+            songsToDisplayArray = [];
             let playing;
             
                 
@@ -149,25 +149,25 @@
                 console.log(barPosition, 'bar container');
             });
             let overlay = document.getElementById("overlay");
-            const title = document.querySelector('#title-main');
-            const author = document.querySelector('#author-main');
-            const play = document.querySelector('.play-button');
-            const imageCase = document.querySelector('.image-case');
-            const imageCover = document.querySelector('.song-screen');
-            const currentTime = document.querySelector('#current-time'); 
-            const backwardButton = document.querySelector('.backward-button');
-            const forwardButton = document.querySelector('.forward-button');
-            const songListContainer = document.querySelector('.song-list-container');
-            const modalContainer =  document.querySelector('.modal-container');
-            const endTime = document.querySelector('.end-time');
-            const startTime = document.querySelector('.start-time');
+            const title = document.querySelector('#title-main'),
+            author = document.querySelector('#author-main'),
+            play = document.querySelector('.play-button'),
+            imageCase = document.querySelector('.image-case'),
+            imageCover = document.querySelector('.song-screen'),
+            currentTime = document.querySelector('#current-time'), 
+            backwardButton = document.querySelector('.backward-button'),
+            forwardButton = document.querySelector('.forward-button'),
+            songListContainer = document.querySelector('.song-list-container'),
+            modalContainer =  document.querySelector('.modal-container'),
+            endTime = document.querySelector('.end-time'),
+            startTime = document.querySelector('.start-time');
             
 
 
 
             //Haburger
-            const burger = document.querySelector('.burger');
-            const songList = document.querySelector('.song-list');
+            const burger = document.querySelector('.burger'),
+            songList = document.querySelector('.song-list');
 
             burger.addEventListener("click", () => {
                 songList.classList.toggle("song-list-out");
@@ -311,6 +311,9 @@
                     }
                     windowOnload(songsToDisplayArray[0]);
                     play.innerHTML = '<img src="./img/pause-white.png" alt="pause"/>';
+
+
+
                     audio.play();
                     audio.addEventListener("timeupdate", countDown, false);
                     audio.addEventListener("timeupdate", countUp, false);
@@ -497,25 +500,26 @@
 
 
 
-            // CountUp
+            // CountDown
             audio.addEventListener("timeupdate", countDown, false);
 
-             function countDown() {
+            function countDown() {
                     let duration = parseInt( audio.duration ),
                     currentTime = parseInt( audio.currentTime ),
                     timeLeft = duration - currentTime,
                     s, m;
                 
                 
-                s = timeLeft % 60;
-                m = Math.floor( timeLeft / 60 ) % 60;
-                
-                s = s < 10 ? "0"+s : s;
-                m = m < 10 ? "0"+m : m;
-                
-                startTime.innerHTML = m+":"+s;
-                
+                    s = timeLeft % 60;
+                    m = Math.floor( timeLeft / 60 ) % 60;
+                    
+                    s = s < 10 ? "0"+s : s;
+                    m = m < 10 ? "0"+m : m;
+                    
+                    startTime.innerHTML = m+":"+s;
+    
             }
+
 
 
             // Countup
