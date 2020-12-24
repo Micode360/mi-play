@@ -94,7 +94,7 @@
                     author: 'Royal Free Music | Bensound Music',
                     source: 'https://www.bensound.com/bensound-music/bensound-memories.mp3'
                 },
-                {
+                {//https://c.stocksy.com/a/2am300/z9/901730.jpg
                     imageCover: 'https://c.stocksy.com/a/2am300/z9/901730.jpg',
                     title:'Better Days',
                     author: 'Royal Free Music | Bensound Music',
@@ -159,6 +159,8 @@
             const forwardButton = document.querySelector('.forward-button');
             const songListContainer = document.querySelector('.song-list-container');
             const modalContainer =  document.querySelector('.modal-container');
+            const endTime = document.querySelector('.end-time');
+            const startTime = document.querySelector('.start-time');
             
 
 
@@ -266,7 +268,6 @@
                 if(!arr){
                     title.textContent = songsInObject[0].title;
                     author.textContent = songsInObject[0].author;
-                    //imageCoverFunction(imageCase, songsInObject[0].imageCover)
                     imageCoverFunction(imageCover, songsInObject[0].imageCover)
                     audio = new Audio(songsInObject[0].source);
                 }
@@ -451,7 +452,6 @@
                     play.innerHTML = '<img src="./img/play-white.png" alt="play"/>';
                     audio.pause(); 
                 }
-                audio.addEventListener("ended", audioEnded);
             });
 
 
@@ -476,12 +476,46 @@
                 }
             });
 
+            window.addEventListener('progress', function(){
+                        console.log('yES');
+            });
+
+
+            // CountUp
+            audio.addEventListener("timeupdate", function() {
+                    let duration = parseInt( audio.duration ),
+                    currentTime = parseInt( audio.currentTime ),
+                    timeLeft = duration - currentTime,
+                    s, m;
+                
+                
+                s = timeLeft % 60;
+                m = Math.floor( timeLeft / 60 ) % 60;
+                
+                s = s < 10 ? "0"+s : s;
+                m = m < 10 ? "0"+m : m;
+                
+                startTime.innerHTML = m+":"+s;
+                
+            }, false);
+
+
+            // Countup
+            audio.addEventListener("timeupdate", function() {
+                var s = parseInt(audio.currentTime % 60);
+                var m = parseInt((audio.currentTime / 60) % 60);
+                if (s < 10) {
+                    endTime.innerHTML = m + ':0' + s;
+                }
+                else {
+                    endTime.innerHTML = m + ':' + s;
+                }
+            }, false);
 
             
-            
-            function audioEnded(){
+            audio.addEventListener("ended", function (){
             play.innerHTML = '<img src="./img/play-white.png" alt="play"/>';
-            }
+            });
     </script>
 </body>
 
