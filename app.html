@@ -244,12 +244,17 @@
                             windowOnload(item);
                             play.innerHTML = '<img src="./img/pause-white.png" alt="pause"/>';
                             audio.play();  
+                            audio.addEventListener("timeupdate", countDown, false);
+                            audio.addEventListener("timeupdate", countUp, false);
                             return;
                         }else{
                             play.innerHTML = '<img src="./img/play-white.png" alt="play"/>';
                             audio.pause();
                             incrementDecrementValue = index; 
                             windowOnload(item);
+                            audio.addEventListener("timeupdate", countDown, false);
+                            audio.addEventListener("timeupdate", countUp, false);
+                            audio.addEventListener("ended", audioEnded);
                         }
 
                     }   
@@ -306,7 +311,10 @@
                     }
                     windowOnload(songsToDisplayArray[0]);
                     play.innerHTML = '<img src="./img/pause-white.png" alt="pause"/>';
-                    audio.play();   
+                    audio.play();
+                    audio.addEventListener("timeupdate", countDown, false);
+                    audio.addEventListener("timeupdate", countUp, false);
+                    audio.addEventListener("ended", audioEnded);   
                 }else{
                     play.innerHTML = '<img src="./img/play-white.png" alt="play"/>';
                     audio.pause();
@@ -322,6 +330,9 @@
                         return;
                     }
                     windowOnload(songsToDisplayArray[0]);
+                    audio.addEventListener("timeupdate", countDown, false);
+                    audio.addEventListener("timeupdate", countUp, false);
+                    audio.addEventListener("ended", audioEnded);
                 }
 
                    
@@ -344,6 +355,10 @@
                             windowOnload(songsToDisplayArray[0]);
                             play.innerHTML = '<img src="./img/pause-white.png" alt="pause"/>';
                             audio.play();
+
+                            audio.addEventListener("timeupdate", countDown, false);
+                            audio.addEventListener("timeupdate", countUp, false);
+                            audio.addEventListener("ended", audioEnded); 
                     }else{
                         play.innerHTML = '<img src="./img/play-white.png" alt="play">';
                             audio.pause();
@@ -358,6 +373,9 @@
                             return;
                         }
                             windowOnload(songsToDisplayArray[0]);
+                            audio.addEventListener("timeupdate", countDown, false);
+                            audio.addEventListener("timeupdate", countUp, false);
+                            audio.addEventListener("ended", audioEnded);
                     }
 
                       
@@ -476,13 +494,13 @@
                 }
             });
 
-            window.addEventListener('progress', function(){
-                        console.log('yES');
-            });
+
 
 
             // CountUp
-            audio.addEventListener("timeupdate", function() {
+            audio.addEventListener("timeupdate", countDown, false);
+
+             function countDown() {
                     let duration = parseInt( audio.duration ),
                     currentTime = parseInt( audio.currentTime ),
                     timeLeft = duration - currentTime,
@@ -497,11 +515,13 @@
                 
                 startTime.innerHTML = m+":"+s;
                 
-            }, false);
+            }
 
 
             // Countup
-            audio.addEventListener("timeupdate", function() {
+            audio.addEventListener("timeupdate", countUp, false);
+            
+            function countUp() {
                 var s = parseInt(audio.currentTime % 60);
                 var m = parseInt((audio.currentTime / 60) % 60);
                 if (s < 10) {
@@ -510,12 +530,13 @@
                 else {
                     endTime.innerHTML = m + ':' + s;
                 }
-            }, false);
+            }
 
             
-            audio.addEventListener("ended", function (){
+            audio.addEventListener("ended", audioEnded);
+            function audioEnded(){
             play.innerHTML = '<img src="./img/play-white.png" alt="play"/>';
-            });
+            }
     </script>
 </body>
 
