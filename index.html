@@ -520,7 +520,7 @@
 
             function countDown() {
                     let duration = parseInt( audio.duration );
-                    console.log(duration);
+  
                     let currentTime = parseInt( audio.currentTime ),
                     timeLeft = duration - currentTime,
                     s, m;
@@ -534,9 +534,7 @@
                     startTime.innerHTML = m+":"+s;
             }
 
-            let AUDIOduration = parseInt( audio.duration );
 
-            console.log(AUDIOduration, 'duration');
 
             // Countup
             audio.addEventListener("timeupdate", countUp, false);
