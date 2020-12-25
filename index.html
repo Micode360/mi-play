@@ -249,10 +249,14 @@
             const PlayClickedSong = (str) => {
                 songsInObject.forEach((item,index) => {
                     item.title = item.title
+                    
                     if(item.title.includes(str)){
                         if(!audio.paused){
+                        
                             play.innerHTML = '<img src="./img/play-white.png" alt="play"/>';
                             audio.pause();
+                            
+                            setTimeout(()=>{
                             incrementDecrementValue = index; 
                             windowOnload(item);
                             play.innerHTML = '<img src="./img/pause-white.png" alt="pause"/>';
@@ -260,6 +264,7 @@
                             audio.addEventListener("timeupdate", countDown, false);
                             audio.addEventListener("timeupdate", countUp, false);
                             return;
+                        },500);   
                         }else{
                             play.innerHTML = '<img src="./img/play-white.png" alt="play"/>';
                             audio.pause();
@@ -316,6 +321,7 @@
                     play.innerHTML = '<img src="./img/play-white.png" alt="play"/>';
                     audio.pause();
 
+                    setTimeout(()=>{
                     incrementDecrementValue = incrementDecrementValue + 1;
                     if(songsToDisplayArray == []) songsToDisplayArray.push(arr(songsInObject,incrementDecrementValue));
                     else{
@@ -328,13 +334,12 @@
                     }
                     windowOnload(songsToDisplayArray[0]);
                     play.innerHTML = '<img src="./img/pause-white.png" alt="pause"/>';
-
-
-
+                   
                     audio.play();
                     audio.addEventListener("timeupdate", countDown, false);
                     audio.addEventListener("timeupdate", countUp, false);
-                    audio.addEventListener("ended", audioEnded);   
+                    audio.addEventListener("ended", audioEnded);
+                },500);   
                 }else{
                     play.innerHTML = '<img src="./img/play-white.png" alt="play"/>';
                     audio.pause();
@@ -362,6 +367,8 @@
                     if(!audio.paused){
                             play.innerHTML = '<img src="./img/play-white.png" alt="play">';
                             audio.pause();
+
+                            setTimeout(()=>{
                             incrementDecrementValue = incrementDecrementValue - 1;
                             if(songsToDisplayArray == []) songsToDisplayArray.push(arr(songsInObject,incrementDecrementValue));
                             else{
@@ -378,7 +385,8 @@
 
                             audio.addEventListener("timeupdate", countDown, false);
                             audio.addEventListener("timeupdate", countUp, false);
-                            audio.addEventListener("ended", audioEnded); 
+                            audio.addEventListener("ended", audioEnded);
+                        },500);   
                     }else{
                         play.innerHTML = '<img src="./img/play-white.png" alt="play">';
                             audio.pause();
