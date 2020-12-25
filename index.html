@@ -57,7 +57,7 @@
                       </div>
 
                       <div class="end-time">
-                        <span>6:25</span>
+                        <span>0:00</span>
                     </div>
                     </div>
                 </div>
@@ -68,11 +68,11 @@
             <div class="song-list-container">
                 <div class="song-case">
                     <div>
-                        <h4 class="song-title">Freedom</h4>
-                        <p class="author">By Saturn</p>
+                        <h4 class="song-title"></h4>
+                        <p class="author"></p>
                     </div>
                    <div>
-                    <span class="total-time-of-song">6:25</span>
+                    <span class="total-time-of-song"></span>
                    </div>
                 </div>
             
@@ -92,13 +92,16 @@
                     imageCover: 'https://i.pinimg.com/originals/3b/8a/d2/3b8ad2c7b1be2caf24321c852103598a.jpg',
                     title:'Memories',
                     author: 'Royal Free Music | Bensound Music',
-                    source: 'https://www.bensound.com/bensound-music/bensound-memories.mp3'
+                    source: 'https://www.bensound.com/bensound-music/bensound-memories.mp3',
+                    duration: '3:50',
+                    type:"audio/mpeg"
                 },
                 {//https://c.stocksy.com/a/2am300/z9/901730.jpg
                     imageCover: 'https://c.stocksy.com/a/2am300/z9/901730.jpg',
                     title:'Better Days',
                     author: 'Royal Free Music | Bensound Music',
                     source: 'https://www.bensound.com/bensound-music/bensound-betterdays.mp3',
+                    duration: '2:33',
                     type:"audio/mpeg"
                 },
                 {
@@ -106,6 +109,7 @@
                     title:'Tenderness',
                     author: 'Royal Free Music | Bensound Music',
                     source: 'https://www.bensound.com/bensound-music/bensound-tenderness.mp3',
+                    duration: '2:03',
                     type:"audio/mpeg"
                 }
                 ,
@@ -114,6 +118,7 @@
                     title:'E.R.F',
                     author: 'Benjamin Tissot',
                     source: 'https://www.bensound.com/bensound-music/bensound-erf.mp3',
+                    duration: '4:40',
                     type:"audio/mpeg"
                 },
                 {
@@ -121,6 +126,7 @@
                     title:'Energy',
                     author: 'Anonymous',
                     source: 'https://www.bensound.com/bensound-music/bensound-energy.mp3',
+                    duration: '2:59',
                     type:"audio/mpeg"
                 },
                 {
@@ -128,6 +134,15 @@
                     title:'Hey',
                     author: 'Royal Free Music | Bensound Music',
                     source: 'https://www.bensound.com/bensound-music/bensound-hey.mp3',
+                    duration: '2:51',
+                    type:"audio/mpeg"
+                },
+                {
+                    imageCover: 'https://i.gifer.com/fzmZ.gif',
+                    title:'Acoustic breeze',
+                    author: 'Royal Free Music | Bensound Music',
+                    source: 'https://www.bensound.com/bensound-music/bensound-acousticbreeze.mp3',
+                    duration: '2:37',
                     type:"audio/mpeg"
                 }
             ]
@@ -145,9 +160,7 @@
             const barAndTimeContainer = document.querySelector('.bar-and-time-container');
             let barPosition = barAndTimeContainer.offsetLeft;
 
-            window.addEventListener('click',function (){
-                console.log(barPosition, 'bar container');
-            });
+
             let overlay = document.getElementById("overlay");
             const title = document.querySelector('#title-main'),
             author = document.querySelector('#author-main'),
@@ -211,7 +224,7 @@
                             <p class="author  author-in-list">${songsInObject[i].author}</p>
                         </div>
                     <div>
-                        <span class="total-time-of-song">6:25</span>
+                        <span class="total-time-of-song">${songsInObject[i].duration}</span>
                     </div>
                     </div>`;
             }
@@ -273,13 +286,17 @@
                 if(!arr){
                     title.textContent = songsInObject[0].title;
                     author.textContent = songsInObject[0].author;
-                    imageCoverFunction(imageCover, songsInObject[0].imageCover)
+                    imageCoverFunction(imageCover, songsInObject[0].imageCover);
+                    startTime.textContent = songsInObject[0].duration
+                    endTime.textContent = 0 +":"+ 0 + 0;
                     audio = new Audio(songsInObject[0].source);
                 }
                 else{
                 title.textContent = arr.title;
                 author.textContent = arr.author;
-                imageCoverFunction(imageCover, arr.imageCover)
+                imageCoverFunction(imageCover, arr.imageCover);
+                startTime.textContent = arr.duration;
+                endTime.textContent = 0 +":"+ 0 + 0;
                 audio = new Audio(arr.source);
                 }
             }
@@ -404,7 +421,6 @@
 
             function currentGrabTimeUpdate(event){
             let eventPageX = event.pageX || event.touches[0].pageX;
-            console.log(eventPageX, 'event page x');
             if((eventPageX - barPosition) > Number(window.getComputedStyle(bar).getPropertyValue("width").replace("px",""))){
                 currentTime.style.width = window.getComputedStyle(bar).getPropertyValue("width");
             }else if((eventPageX - barPosition) < 0){
@@ -479,7 +495,6 @@
             let volumeRamge = audio.volume = 0.5;
 
             window.addEventListener('keydown', function(event){
-                console.log(event.keyCode);
                 if(event.keyCode === 32 && audio.paused){
                     play.innerHTML = '<img src="./img/pause-white.png" alt="pause"/>';
                     audio.play();
@@ -504,30 +519,31 @@
             audio.addEventListener("timeupdate", countDown, false);
 
             function countDown() {
-                    let duration = parseInt( audio.duration ),
-                    currentTime = parseInt( audio.currentTime ),
+                    let duration = parseInt( audio.duration );
+                    console.log(duration);
+                    let currentTime = parseInt( audio.currentTime ),
                     timeLeft = duration - currentTime,
                     s, m;
-                
-                
+                    
                     s = timeLeft % 60;
                     m = Math.floor( timeLeft / 60 ) % 60;
                     
                     s = s < 10 ? "0"+s : s;
                     m = m < 10 ? "0"+m : m;
-                    
+
                     startTime.innerHTML = m+":"+s;
-    
             }
 
+            let AUDIOduration = parseInt( audio.duration );
 
+            console.log(AUDIOduration, 'duration');
 
             // Countup
             audio.addEventListener("timeupdate", countUp, false);
             
             function countUp() {
                 var s = parseInt(audio.currentTime % 60);
-                var m = parseInt((audio.currentTime / 60) % 60);
+                var m = parseInt((audio.currentTime / 60));
                 if (s < 10) {
                     endTime.innerHTML = m + ':0' + s;
                 }
