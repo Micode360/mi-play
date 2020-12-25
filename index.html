@@ -89,6 +89,7 @@
 
              const songsInObject = [
                 {
+                    albumImageCover: 'https://pbs.twimg.com/profile_images/1011617157589893120/Pa8Xyu6o_400x400.jpg',
                     imageCover: 'https://i.pinimg.com/originals/3b/8a/d2/3b8ad2c7b1be2caf24321c852103598a.jpg',
                     title:'Memories',
                     author: 'Royal Free Music | Bensound Music',
@@ -96,7 +97,8 @@
                     duration: '3:50',
                     type:"audio/mpeg"
                 },
-                {//https://c.stocksy.com/a/2am300/z9/901730.jpg
+                {   
+                    albumImageCover: 'https://pbs.twimg.com/profile_images/1011617157589893120/Pa8Xyu6o_400x400.jpg',
                     imageCover: 'https://c.stocksy.com/a/2am300/z9/901730.jpg',
                     title:'Better Days',
                     author: 'Royal Free Music | Bensound Music',
@@ -105,6 +107,7 @@
                     type:"audio/mpeg"
                 },
                 {
+                    albumImageCover: 'https://pbs.twimg.com/profile_images/1011617157589893120/Pa8Xyu6o_400x400.jpg',
                     imageCover: 'https://c4.wallpaperflare.com/wallpaper/510/623/588/love-tenderness-child-small-wallpaper-preview.jpg',
                     title:'Tenderness',
                     author: 'Royal Free Music | Bensound Music',
@@ -114,6 +117,7 @@
                 }
                 ,
                 {
+                    albumImageCover: 'https://www.evernote.design/assets/images/bensound.jpg',
                     imageCover: 'https://images.unsplash.com/photo-1487215078519-e21cc028cb29?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mjd8fHxlbnwwfHx8&w=1000&q=80',
                     title:'E.R.F',
                     author: 'Benjamin Tissot',
@@ -122,6 +126,7 @@
                     type:"audio/mpeg"
                 },
                 {
+                    albumImageCover: 'https://pbs.twimg.com/profile_images/1011617157589893120/Pa8Xyu6o_400x400.jpg',
                     imageCover: 'https://www.movesmedia.com/wp-content/uploads/2017/12/Music.jpg',
                     title:'Energy',
                     author: 'Anonymous',
@@ -130,6 +135,7 @@
                     type:"audio/mpeg"
                 },
                 {
+                    albumImageCover: 'https://pbs.twimg.com/profile_images/1011617157589893120/Pa8Xyu6o_400x400.jpg',
                     imageCover: 'https://res.cloudinary.com/teepublic/image/private/s--11pGPf10--/c_fit,g_north_west,h_599,w_840/co_000000,e_outline:40/co_000000,e_outline:inner_fill:1/co_ffffff,e_outline:40/co_ffffff,e_outline:inner_fill:1/co_bbbbbb,e_outline:3:1000/c_mpad,g_center,h_1260,w_1260/b_rgb:eeeeee/c_limit,f_jpg,h_630,q_90,w_630/v1551800971/production/designs/4343793_2.jpg',
                     title:'Hey',
                     author: 'Royal Free Music | Bensound Music',
@@ -138,6 +144,7 @@
                     type:"audio/mpeg"
                 },
                 {
+                    albumImageCover: 'https://pbs.twimg.com/profile_images/1011617157589893120/Pa8Xyu6o_400x400.jpg',
                     imageCover: 'https://i.gifer.com/fzmZ.gif',
                     title:'Acoustic breeze',
                     author: 'Royal Free Music | Bensound Music',
@@ -255,7 +262,7 @@
                         
                             play.innerHTML = '<img src="./img/play-white.png" alt="play"/>';
                             audio.pause();
-                            
+
                             setTimeout(()=>{
                             incrementDecrementValue = index; 
                             windowOnload(item);
@@ -289,6 +296,7 @@
             
             const windowOnload = (arr) => {
                 if(!arr){
+                    imageCoverFunction(imageCase, songsInObject[0].albumImageCover);
                     title.textContent = songsInObject[0].title;
                     author.textContent = songsInObject[0].author;
                     imageCoverFunction(imageCover, songsInObject[0].imageCover);
@@ -297,6 +305,7 @@
                     audio = new Audio(songsInObject[0].source);
                 }
                 else{
+                imageCoverFunction(imageCase, arr.albumImageCover);
                 title.textContent = arr.title;
                 author.textContent = arr.author;
                 imageCoverFunction(imageCover, arr.imageCover);
