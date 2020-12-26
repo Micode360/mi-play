@@ -152,6 +152,7 @@
                     duration: '2:37',
                     type:"audio/mpeg"
                 }
+
             ]
 
             //built bindings
@@ -288,10 +289,17 @@
 
             
             const imageCoverFunction = (binding, url) => {
+                if(url == '') {
+                    binding.style.background = 'url(./img/image_cover_default.png)'
+                    binding.style.backgroundPosition = 'center';
+                    binding.style.backgroundSize = 'cover';
+                    binding.style.backgroundRepeat = 'no-repeat';
+                }else{ 
                 binding.style.background = `url(${url})`;
                 binding.style.backgroundPosition = 'center';
                 binding.style.backgroundSize = 'cover';
                 binding.style.backgroundRepeat = 'no-repeat';
+            }
             }
             
             const windowOnload = (arr) => {
