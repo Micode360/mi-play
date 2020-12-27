@@ -1,0 +1,24 @@
+{
+  "name": "music-app",
+  "version": "1.0.0",
+  "description": "A music site that's pretty much it",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/miraking/mi-play.git"
+  },
+  "author": "Abaye Miracle Hesed",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/miraking/mi-play/issues"
+  },
+  "homepage": "https://github.com/miraking/mi-play#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
+  }
+}

@@ -208,7 +208,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url(../img/mets-wallpaper-13517-13929-hd-wallpapers.jpg);
+    background-image: url(../img/image_cover_default.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -230,7 +230,7 @@ body {
 }
 
 .image-case{
-    background-image: url(../img/mets-wallpaper-13517-13929-hd-wallpapers.jpg);
+    background-image: url(../img/image_cover_default.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
