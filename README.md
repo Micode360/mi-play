@@ -1,5 +1,5 @@
 # mi-play
-![miplay background](./img/miplay.png)
+![miplay background](./public/img/miplay.png)
 
 A music website. That's Pretty much what it is.
 
