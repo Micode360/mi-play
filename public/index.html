@@ -8,12 +8,6 @@
             <title>mi-play</title>
             <link rel="stylesheet" href="./css/style.css">
             <link rel="icon" href="./img/icon.ico" type="image/x-icon">
-
-    <style>
-      
-
-        
-    </style>
 </head>
 
 <body>
@@ -78,10 +72,21 @@
             </div>
         </div>
 
-        <div class="modal-container">
+        <div class="modal-container"></div>
 
+        <div class="loader">
+            <div class="centered-div">
+                <div class="laoding-logo"></div>
+
+                <div class="spinner-box">
+                    <div class="pulse-container">  
+                    <div class="pulse-bubble pulse-bubble-1"></div>
+                    <div class="pulse-bubble pulse-bubble-2"></div>
+                    <div class="pulse-bubble pulse-bubble-3"></div>
+                    </div>
+                </div>
+            </div>
         </div>
-
     </main>
     <script>
 
@@ -143,6 +148,48 @@
                 }
             ]
 
+
+
+            const loader = document.querySelector('.loader');
+            const body = document.querySelector('body');
+
+
+            let localTokenData = 'SFSIFNASFKASKLKLDGDFGDVVVV';
+            if(window.innerWidth > 500) {
+            window.onload = () => {
+
+                setTimeout(()=>{
+                    loader.style.display = 'none';
+                },3000);
+                            
+
+                if(localStorage.getItem('serialToken') === localTokenData){
+                    modalContainer.style.display = 'none';
+                    return;
+                }else{
+                    modalContainer.style.display = 'block';
+                    modalContainer.innerHTML = `
+                    <div class="modal">
+                        <div class="intro-image"></div>
+                        <div class="intro-details">
+                            <p>version 1.0</p>
+                            <p>Miplay is simply a music website that allows you to play music online.</p>
+                            <div class="button-case"><button class="enter">Enter</button></div>
+                        </div>
+                    </div>
+                    `;
+                    }
+
+                    document.querySelector('.enter').addEventListener('click', function(){
+                    localStorage.setItem('serialToken', localTokenData)
+                    modalContainer.style.display = 'none';
+                });
+            }                    
+
+        }
+
+
+
             //built bindings
             let audio;
             incrementDecrementValue = 0,
@@ -183,36 +230,6 @@
             });
 
 
-
-
-            let localTokenData = 'SFSIFNASFKASKLKLDGDFGDVVVV';
-            if(window.innerWidth > 500) {
-            window.onload = () => {
-                if(localStorage.getItem('serialToken') === localTokenData){
-                    modalContainer.style.display = 'none';
-                    return;
-                }else{
-                    modalContainer.style.display = 'block';
-                    modalContainer.innerHTML = `
-                    <div class="modal">
-                        <div class="intro-image"></div>
-                        <div class="intro-details">
-                            <p>version 1.0</p>
-                            <p>Miplay is simply a music website that allows you to play music online.</p>
-                            <div class="button-case"><button class="enter">Enter</button></div>
-                        </div>
-                    </div>
-                    `;
-                    }
-
-                    document.querySelector('.enter').addEventListener('click', function(){
-                    localStorage.setItem('serialToken', localTokenData)
-                    modalContainer.style.display = 'none';
-                });
-            }
-
-            //Put image animation loader. 
-        }
 
 
             const songMapToSide = () => {

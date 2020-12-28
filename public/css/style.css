@@ -14,6 +14,82 @@ body {
 }
 
 
+
+.loader{
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--custom-black);
+    z-index: 4;
+}
+
+.centered-div{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: var(--custom-black);
+    z-index: 2;
+    color: aliceblue;
+    border-radius: 8px;
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.laoding-logo{
+    background:url(./img/icon.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 70px;
+    height: 70px;
+}
+
+
+.spinner-box {
+    width: 200px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    }
+
+/* PULSE BUBBLES */
+
+.pulse-container {
+width: 120px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.pulse-bubble {
+width: 20px;
+height: 20px;
+border-radius: 50%;
+background-color: var(--custom-yellow);
+}
+
+.pulse-bubble-1 {
+    animation: pulse .4s ease 0s infinite alternate;
+}
+.pulse-bubble-2 {
+    animation: pulse .4s ease .2s infinite alternate;
+}
+.pulse-bubble-3 {
+    animation: pulse .4s ease .4s infinite alternate;
+}
+
+
+
 .container{
     position: absolute;
     top: 0;
@@ -496,4 +572,16 @@ border-radius: 50%;
     }
 
 }
+
+
+@keyframes pulse {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+    to {
+        opacity: .25;
+        transform: scale(.75);
+    }
+    }
 
