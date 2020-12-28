@@ -162,7 +162,7 @@
                 },3000);
                             
                 if(window.innerWidth > 500) {
-                if(localStorage.getItem('serialToken') === localTokenData){
+                if(localStorage.getItem('miplaySerialToken') === localTokenData){
                     modalContainer.style.display = 'none';
                     return;
                 }else{
@@ -180,7 +180,7 @@
                     }
 
                     document.querySelector('.enter').addEventListener('click', function(){
-                    localStorage.setItem('serialToken', localTokenData)
+                    localStorage.setItem('miplaySerialToken', localTokenData)
                     modalContainer.style.display = 'none';
                 });
             }                    
