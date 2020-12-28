@@ -62,7 +62,7 @@ body {
     background-color: transparent;
     }
 
-/* PULSE BUBBLES */
+
 
 .pulse-container {
 width: 120px;
@@ -164,7 +164,7 @@ background-color: var(--custom-yellow);
 }
 
 .intro-details p:nth-child(2){
-    font-size: 20px;
+    font-size: 16px;
     line-height: 24px;
 }
 
@@ -179,13 +179,14 @@ background-color: var(--custom-yellow);
     outline: none;
     border: none;
     background-color: rgb(148, 148, 13);
-    padding: 5px 20px;
+    padding: 5px 25px;
     border-radius: 4px;
     margin: 12px 0;
     font-family: roboto;
     font-size: 16px !important;
     font-weight: 300;
     font-size: 18px;
+    color: #ffffff;
 }
 
 .enter:hover{
