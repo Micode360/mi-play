@@ -16,7 +16,7 @@
   "bugs": {
     "url": "https://github.com/miraking/mi-play/issues"
   },
-  "homepage": "https://github.com/miraking/mi-play#readme",
+  "homepage": "https://github.com/miraking/mi-play",
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.17.1"
