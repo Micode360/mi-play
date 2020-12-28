@@ -6,7 +6,7 @@
 >Needs more update. More stuffs to fix.
 
 ## Description
-A music website. That's Pretty much what it is.
+A music web application or website. That's Pretty much what it is.
 
 ## ABOUT
 Miplay is created with html css and vanilla javascript using the ES5 and ES6 syntax.
