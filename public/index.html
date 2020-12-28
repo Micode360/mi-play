@@ -155,14 +155,14 @@
 
 
             let localTokenData = 'SFSIFNASFKASKLKLDGDFGDVVVV';
-            if(window.innerWidth > 500) {
+
             window.onload = () => {
 
                 setTimeout(()=>{
                     loader.style.display = 'none';
                 },3000);
                             
-
+                if(window.innerWidth > 500) {
                 if(localStorage.getItem('serialToken') === localTokenData){
                     modalContainer.style.display = 'none';
                     return;
