@@ -44,7 +44,7 @@ body {
 }
 
 .laoding-logo{
-    background:url(./img/icon.png);
+    background:url(../img/icon.png);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
