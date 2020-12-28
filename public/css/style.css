@@ -576,12 +576,12 @@ border-radius: 50%;
 
 
 
-@media(max-width:500px){
+/* @media(max-width:500px){
     /* .main-section {
         position: inherit;
     } */
-
-    /* .burger{
+/*
+    .burger{
         display: block;
         position: fixed;
         top: 26px;
@@ -618,8 +618,8 @@ border-radius: 50%;
        flex-direction: column;
        z-index: 3;
     }
-     */
-}
+    
+} */
 
 
 @keyframes pulse {
