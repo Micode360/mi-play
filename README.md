@@ -5,8 +5,7 @@
 
 >Needs more update. More stuffs to fix.
 
-##Description
-
+## Description
 A music website. That's Pretty much what it is.
 
 ## ABOUT
