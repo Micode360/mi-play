@@ -13,10 +13,28 @@ body {
 --bar-height:5px;
 }
 
+.fa-record-vinyl{
+    display: none;
+    position: absolute;
+    bottom: 50px;
+    right: 40px;
+    color: var(--custom-yellow);
+    font-size: 50px;
+    opacity: 0.3;
+}
 
+.fa-record-vinyl:hover{
+    color:#c1c722;
+    transform: scale(0.98);
+    opacity: 1;
+}
+
+.fa-record-vinyl:active{
+    color:#a2a722;
+}
 
 .loader{
-    display: block;
+    display: none;
     position: absolute;
     top: 0;
     left: 0;
@@ -114,7 +132,7 @@ background-color: var(--custom-yellow);
     right: 0;
     bottom: 0;
     background-color: rgba(51, 51, 51, 0.692);
-    z-index: 2;
+    z-index: 3;
 }
 
 .modal{
