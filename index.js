@@ -1,6 +1,6 @@
 const express = require('express');
 const cors = require('cors');
-const hostname = '127.23.4.1';
+//const hostname = '127.23.4.1';
 const app = express();
 
 
@@ -21,6 +21,6 @@ app.get('/', (req,res) => {
 });
 
 
-app.listen(port, hostname,()=>{
-   console.log(`node server is running on http://${hostname}:${port}`);
+app.listen(port,()=>{
+   console.log(`node server is running on  ${port}`);
 });
