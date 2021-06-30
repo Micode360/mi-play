@@ -6,7 +6,7 @@
 }
 
 body {
-    font-family: roboto, sans-serif;
+    font-family: Roboto, sans-serif;
 }
 
 :root {
@@ -36,7 +36,7 @@ body {
 }
 
 .loader {
-    display: block;
+    display: none;
     position: absolute;
     top: 0;
     left: 0;
@@ -164,7 +164,7 @@ body {
     grid-template-columns: 1.5fr 1fr;
     align-items: center;
     padding: 20px;
-    font-family: roboto, sans-serif;
+    font-family: Roboto, sans-serif;
     font-weight: 200;
     font-size: 16px;
 }
@@ -204,7 +204,7 @@ body {
     padding: 5px 25px;
     border-radius: 4px;
     margin: 12px 0;
-    font-family: roboto, sans-serif;
+    font-family: Roboto, sans-serif;
     font-size: 16px !important;
     font-weight: 300;
     font-size: 18px;
