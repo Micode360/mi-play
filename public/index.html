@@ -1,46 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <meta name="author" description = "Miracle King Hesed">
-            <meta name="description" content="A music website. That's Pretty much all it is.">
-            <title>mi-play</title>
-            <link rel="stylesheet" href="./css/style.css">
-            <link rel="icon" href="./img/icon.ico" type="image/x-icon">
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" description="Miracle King Hesed">
+    <meta name="description" content="A music website. That's Pretty much all it is.">
+    <title>mi-play</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="icon" href="./img/icon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
     <div id="overlay"></div>
     <main class="container">
         <div class="main-section">
-         <div class="screen-for-handheld">
-            <div class="song-screen-container">
-                            <div class="song-screen">
-                <img class="top-gradient" src="./img/top_gradient.png" alt="top_gradient"/>
+            <div class="screen-for-handheld">
+                <div class="song-screen-container">
+                    <div class="song-screen">
+                        <img class="top-gradient" src="./img/top_gradient.png" alt="top_gradient" />
                         <div class="song-main-case ">
-                                <div class="image-case"></div>
+                            <div class="image-case"></div>
                             <div class="song-text-case">
                                 <h4 id="title-main" class="song-title">Freedom</h4>
                                 <p id="author-main" class="author">By Saturn</p>
                             </div>
-                            <img class="burger" width="25" height="25" src="./img/burger.png" alt="burger"/>
-                            
+                            <img class="burger" width="25" height="25" src="./img/burger.png" alt="burger" />
+
+                        </div>
+                        <img class="bottom-gradient" src="./img/bottom_gradient_II.png" alt="bottom_gradient" />
+                    </div>
                 </div>
-                <img class="bottom-gradient" src="./img/bottom_gradient_II.png" alt="bottom_gradient"/>
-            </div>
-        </div>
             </div>
             <div class="music-controls">
                 <div class="music-buttons">
-                    <!-- <i class="fa fa-step-backward" aria-hidden="true"></i> -->
-                    <img class="backward-button" src="./img/backward-white.png" alt="backward"/>
-                    <span class="play-button"><img src="./img/play-white.png" alt="play"/></span>
-                    <!-- <i class="fa fa-play" aria-hidden="true"></i>   <i class="fa fa-pause" aria-hidden="true"></i> -->
-                    <img class="forward-button" src="./img/forward-white.png" alt="forward"/>
-                    <!-- <i class="fa fa-step-forward" aria-hidden="true"></i> -->
+                    <i class="fa fa-step-backward backward-button" aria-hidden="true"></i>
+                    <span class="play-button"><i class="fa fa-play" aria-hidden="true"></i></span>
+                    <i class="fa fa-step-forward forward-button" aria-hidden="true"></i>
                 </div>
                 <div class="other-controls">
                     <div class="start-time">
@@ -50,14 +48,14 @@
                     <div class="bar-and-time-container">
                         <div id="bar"></div>
                         <div id="current-time"></div>
-                      </div>
-
-                      <div class="end-time">
-                        <span>0:00</span>
                     </div>
+
+                    <div class="end-time">
+                        <span>0:00</span>
                     </div>
                 </div>
             </div>
+        </div>
         </div>
         <div class="song-list">
             <h2>Songs</h2>
@@ -67,24 +65,120 @@
                         <h4 class="song-title"></h4>
                         <p class="author"></p>
                     </div>
-                   <div>
-                    <span class="total-time-of-song"></span>
-                   </div>
+                    <div>
+                        <span class="total-time-of-song"></span>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="modal-container"></div>
+        <div class="modal-container">
+            <div class="music-link-container">
+                <div>
+                    <div><input type="text" name="album-cover" id="image-input-album-cover" placeholder="album image cover" /></div>
+                    <div><input type="text" name="image-cover" id="image-input-cover" placeholder="image cover" /></div>
+                </div>
+                <div>
+                    <div><input type="text" name="input-title" id="input-title" placeholder="title" /></div>
+                    <div><input type="text" name="input-author" id="input-author" placeholder="author" /></div>
+                </div>
+                <div>
+                    <input type="text" name="" id="input-source" placeholder="source" />
+                </div>
+                <div>
+                    <button class="song-button">Input song</button>
+                </div>
+            </div>
+        </div>
+
+        <style>
+            .music-link-container {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background-color: var(--custom-black);
+                z-index: 2;
+                color: aliceblue;
+                border-radius: 8px;
+                display: flex;
+                flex-direction: column;
+                padding: 15px 15px;
+            }
+            
+            .input-song-title {
+                font-weight: 400;
+                font-size: 14px;
+            }
+            
+            .music-link-container input {
+                width: 100%;
+                padding: 8px;
+                background-color: rgb(10, 10, 10);
+                color: #ffffff;
+                outline: none;
+                font-family: roboto;
+                font-weight: 300;
+                font-size: 16px;
+                border: 1px solid var(--custom-yellow);
+                border-radius: 2px;
+                margin-top: 35px;
+            }
+            
+            .music-link-container div:nth-child(1),
+            .music-link-container div:nth-child(2) {
+                display: flex;
+                flex-direction: row;
+            }
+            
+            .music-link-container div:nth-child(1) div:nth-child(1),
+            .music-link-container div:nth-child(2) div:nth-child(1) {
+                margin-right: 12px;
+            }
+            
+            .music-link-container div:nth-child(3),
+            .music-link-container div:nth-child(4) {
+                display: flex;
+            }
+            
+            .music-link-container div:nth-child(4) {
+                padding: 25px 0 12px 0;
+            }
+            
+            .song-button {
+                width: 100%;
+                padding: 9px 25px;
+                outline: none;
+                font-family: roboto;
+                font-size: 16px;
+                font-weight: 300;
+                background-color: rgb(189, 189, 13);
+                border: none;
+                border-radius: 2px;
+            }
+            
+            .song-button:hover {
+                background-color: rgb(163, 163, 7);
+                color: #eee;
+            }
+            
+            .song-button:active {
+                background-color: rgb(138, 138, 9);
+                color: #eee;
+            }
+        </style>
+
+
 
         <div class="loader">
             <div class="centered-div">
                 <div class="laoding-logo"></div>
 
                 <div class="spinner-box">
-                    <div class="pulse-container">  
-                    <div class="pulse-bubble pulse-bubble-1"></div>
-                    <div class="pulse-bubble pulse-bubble-2"></div>
-                    <div class="pulse-bubble pulse-bubble-3"></div>
+                    <div class="pulse-container">
+                        <div class="pulse-bubble pulse-bubble-1"></div>
+                        <div class="pulse-bubble pulse-bubble-2"></div>
+                        <div class="pulse-bubble pulse-bubble-3"></div>
                     </div>
                 </div>
             </div>
@@ -92,152 +186,166 @@
         <i class="fas fa-record-vinyl"></i>
     </main>
     <script>
-
-             const songsInObject = [
-                {
-                    albumImageCover: 'https://pbs.twimg.com/profile_images/1011617157589893120/Pa8Xyu6o_400x400.jpg',
-                    imageCover: 'https://i.pinimg.com/originals/3b/8a/d2/3b8ad2c7b1be2caf24321c852103598a.jpg',
-                    title:'Memories',
-                    author: 'Royal Free Music | Bensound Music',
-                    source: 'https://www.bensound.com/bensound-music/bensound-memories.mp3',
-                    duration: '3:50',
-                    type:"audio/mpeg"
-                },
-                {   
-                    albumImageCover: 'https://pbs.twimg.com/profile_images/1011617157589893120/Pa8Xyu6o_400x400.jpg',
-                    imageCover: 'https://c.stocksy.com/a/2am300/z9/901730.jpg',
-                    title:'Better Days',
-                    author: 'Royal Free Music | Bensound Music',
-                    source: 'https://www.bensound.com/bensound-music/bensound-betterdays.mp3',
-                    duration: '2:33',
-                    type:"audio/mpeg"
-                },
-                {
-                    albumImageCover: 'https://pbs.twimg.com/profile_images/1011617157589893120/Pa8Xyu6o_400x400.jpg',
-                    imageCover: 'https://c4.wallpaperflare.com/wallpaper/510/623/588/love-tenderness-child-small-wallpaper-preview.jpg',
-                    title:'Tenderness',
-                    author: 'Royal Free Music | Bensound Music',
-                    source: 'https://www.bensound.com/bensound-music/bensound-tenderness.mp3',
-                    duration: '2:03',
-                    type:"audio/mpeg"
-                }
-                ,
-                {
-                    albumImageCover: 'https://www.evernote.design/assets/images/bensound.jpg',
-                    imageCover: 'https://images.unsplash.com/photo-1487215078519-e21cc028cb29?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mjd8fHxlbnwwfHx8&w=1000&q=80',
-                    title:'E.R.F',
-                    author: 'Benjamin Tissot',
-                    source: 'https://www.bensound.com/bensound-music/bensound-erf.mp3',
-                    duration: '4:40',
-                    type:"audio/mpeg"
-                },
-                {
-                    albumImageCover: 'https://pbs.twimg.com/profile_images/1011617157589893120/Pa8Xyu6o_400x400.jpg',
-                    imageCover: 'https://www.movesmedia.com/wp-content/uploads/2017/12/Music.jpg',
-                    title:'Energy',
-                    author: 'Anonymous',
-                    source: 'https://www.bensound.com/bensound-music/bensound-energy.mp3',
-                    duration: '2:59',
-                    type:"audio/mpeg"
-                },
-                {
-                    albumImageCover: 'https://pbs.twimg.com/profile_images/1011617157589893120/Pa8Xyu6o_400x400.jpg',
-                    imageCover: 'https://res.cloudinary.com/teepublic/image/private/s--11pGPf10--/c_fit,g_north_west,h_599,w_840/co_000000,e_outline:40/co_000000,e_outline:inner_fill:1/co_ffffff,e_outline:40/co_ffffff,e_outline:inner_fill:1/co_bbbbbb,e_outline:3:1000/c_mpad,g_center,h_1260,w_1260/b_rgb:eeeeee/c_limit,f_jpg,h_630,q_90,w_630/v1551800971/production/designs/4343793_2.jpg',
-                    title:'Hey',
-                    author: 'Royal Free Music | Bensound Music',
-                    source: 'https://www.bensound.com/bensound-music/bensound-hey.mp3',
-                    duration: '2:51',
-                    type:"audio/mpeg"
-                }
-            ]
+        const songsStore = [{
+            albumImageCover: 'https://res.cloudinary.com/dw86qaw6y/image/upload/v1625064890/bensound_logo_wtyxrp.png',
+            imageCover: 'https://i.pinimg.com/originals/3b/8a/d2/3b8ad2c7b1be2caf24321c852103598a.jpg',
+            title: 'Memories',
+            author: 'Royal Free Music | Bensound Music',
+            source: 'https://www.bensound.com/bensound-music/bensound-memories.mp3',
+            duration: '3:50',
+            type: "audio/mpeg"
+        }, {
+            albumImageCover: 'https://pbs.twimg.com/profile_images/1011617157589893120/Pa8Xyu6o_400x400.jpg',
+            imageCover: 'https://c.stocksy.com/a/2am300/z9/901730.jpg',
+            title: 'Better Days',
+            author: 'Royal Free Music | Bensound Music',
+            source: 'https://www.bensound.com/bensound-music/bensound-betterdays.mp3',
+            duration: '2:33',
+            type: "audio/mpeg"
+        }, {
+            albumImageCover: 'https://pbs.twimg.com/profile_images/1011617157589893120/Pa8Xyu6o_400x400.jpg',
+            imageCover: 'https://c4.wallpaperflare.com/wallpaper/510/623/588/love-tenderness-child-small-wallpaper-preview.jpg',
+            title: 'Tenderness',
+            author: 'Royal Free Music | Bensound Music',
+            source: 'https://www.bensound.com/bensound-music/bensound-tenderness.mp3',
+            duration: '2:03',
+            type: "audio/mpeg"
+        }, {
+            albumImageCover: 'https://www.evernote.design/assets/images/bensound.jpg',
+            imageCover: 'https://images.unsplash.com/photo-1487215078519-e21cc028cb29?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mjd8fHxlbnwwfHx8&w=1000&q=80',
+            title: 'E.R.F',
+            author: 'Benjamin Tissot',
+            source: 'https://www.bensound.com/bensound-music/bensound-erf.mp3',
+            duration: '4:40',
+            type: "audio/mpeg"
+        }, {
+            albumImageCover: 'https://pbs.twimg.com/profile_images/1011617157589893120/Pa8Xyu6o_400x400.jpg',
+            imageCover: 'https://www.movesmedia.com/wp-content/uploads/2017/12/Music.jpg',
+            title: 'Energy',
+            author: 'Anonymous',
+            source: 'https://www.bensound.com/bensound-music/bensound-energy.mp3',
+            duration: '2:59',
+            type: "audio/mpeg"
+        }, {
+            albumImageCover: 'https://pbs.twimg.com/profile_images/1011617157589893120/Pa8Xyu6o_400x400.jpg',
+            imageCover: 'https://res.cloudinary.com/teepublic/image/private/s--11pGPf10--/c_fit,g_north_west,h_599,w_840/co_000000,e_outline:40/co_000000,e_outline:inner_fill:1/co_ffffff,e_outline:40/co_ffffff,e_outline:inner_fill:1/co_bbbbbb,e_outline:3:1000/c_mpad,g_center,h_1260,w_1260/b_rgb:eeeeee/c_limit,f_jpg,h_630,q_90,w_630/v1551800971/production/designs/4343793_2.jpg',
+            title: 'Hey',
+            author: 'Royal Free Music | Bensound Music',
+            source: 'https://www.bensound.com/bensound-music/bensound-hey.mp3',
+            duration: '2:51',
+            type: "audio/mpeg"
+        }]
 
 
+        const getSongsObject = localStorage.getItem('songsInObject');
+        const songsInObject = JSON.parse(getSongsObject);
+        const loader = document.querySelector('.loader');
+        const body = document.querySelector('body');
 
-            const loader = document.querySelector('.loader');
-            const body = document.querySelector('body');
 
+        let localTokenData = 'SFSIFNASFKASKLKLDGDFGDVVVV';
 
-            let localTokenData = 'SFSIFNASFKASKLKLDGDFGDVVVV';
+        window.onload = () => {
+            setTimeout(() => {
+                loader.style.display = 'none';
+            }, 3000);
 
-            window.onload = () => {
-                setTimeout(()=>{
-                    loader.style.display = 'none';
-                },3000);
-                            
-                if(window.innerWidth > 500) {
-                if(localStorage.getItem('miplaySerialToken') === localTokenData){
+            if (window.innerWidth > 500) {
+                if (localStorage.getItem('miplaySerialToken') === localTokenData) {
                     modalContainer.style.display = 'none';
                     return;
-                }else{
+                } else {
                     modalContainer.style.display = 'block';
                     modalContainer.innerHTML = `
                     <div class="modal">
                         <div class="intro-image"></div>
                         <div class="intro-details">
-                            <p>Version 1.0</p>
-                            <p>Miplay is simply a music website that allows you to play music online.</p>
+                            <div>
+                                <p>Version 1.0</p>
+                                <p>Miplay is simply a music website that allows you to play music online.</p>    
+                            </div>
                             <div class="button-case"><button class="enter">Enter</button></div>
                         </div>
                     </div>
                     `;
-                    }
+                }
 
-                    document.querySelector('.enter').addEventListener('click', function(){
+                document.querySelector('.enter').addEventListener('click', function() {
                     localStorage.setItem('miplaySerialToken', localTokenData)
+                    localStorage.setItem('songsInObject', JSON.stringify(songsStore))
                     modalContainer.style.display = 'none';
                 });
-            }                    
+
+            }
 
         }
 
 
+        //New function to input song
+        document.querySelector('.song-button').addEventListener('click', () => {
+            let inputAlbumCover = document.querySelector('#image-input-album-cover').value,
+                inputCover = document.querySelector('#image-input-cover').value,
+                inputTitle = document.querySelector('#input-title').value,
+                inputAuthor = document.querySelector('#input-author').value,
+                inputSource = document.querySelector('#input-source').value;
+            song = {
+                inputAlbumCover: inputAlbumCover,
+                inputCover: inputCover,
+                inputTitle: inputTitle,
+                inputAuthor: inputAuthor,
+                inputSource: inputSource
+            }
+        })
 
-            //built bindings
-            let audio;
-            incrementDecrementValue = 0,
-            songsToDisplayArray = [];
-            let playing;
-            
-                
-
-            //Element Bindings
-            const bar = document.querySelector("#bar");
-            const barAndTimeContainer = document.querySelector('.bar-and-time-container');
-            let barPosition = barAndTimeContainer.offsetLeft;
 
 
-            let overlay = document.getElementById("overlay");
-            const title = document.querySelector('#title-main'),
+
+        //built bindings
+        let audio;
+        incrementDecrementValue = 0,
+        songsToDisplayArray = [];
+        let playing;
+
+
+
+        //Element Bindings
+        const bar = document.querySelector("#bar");
+        const barAndTimeContainer = document.querySelector('.bar-and-time-container');
+        let barPosition = barAndTimeContainer.offsetLeft;
+
+
+        let overlay = document.getElementById("overlay");
+        const title = document.querySelector('#title-main'),
             author = document.querySelector('#author-main'),
             play = document.querySelector('.play-button'),
             imageCase = document.querySelector('.image-case'),
             imageCover = document.querySelector('.song-screen'),
-            currentTime = document.querySelector('#current-time'), 
+            currentTime = document.querySelector('#current-time'),
             backwardButton = document.querySelector('.backward-button'),
             forwardButton = document.querySelector('.forward-button'),
             songListContainer = document.querySelector('.song-list-container'),
-            modalContainer =  document.querySelector('.modal-container'),
+            modalContainer = document.querySelector('.modal-container'),
             endTime = document.querySelector('.end-time'),
             startTime = document.querySelector('.start-time');
-            
 
 
 
-            //Haburger
-            const burger = document.querySelector('.burger'),
+
+        //Haburger
+        const burger = document.querySelector('.burger'),
             songList = document.querySelector('.song-list');
 
-            burger.addEventListener("click", () => {
-                songList.classList.toggle("song-list-out");
-            });
+        burger.addEventListener("click", () => {
+            songList.classList.toggle("song-list-out");
+        });
 
 
 
 
-            const songMapToSide = () => {
+        const songMapToSide = () => {
             var content = '';
-            for (let i = 0; i < songsInObject.length;i++) {
-            content +=`
+            for (let i = 0; i < songsInObject.length; i++) {
+                content += `
                     <div class="song-case" onclick="getThisTagValue(this)" data-id=${songsInObject[i].title.replace(/\W/g, "-")}>
                         <div>
                             <h4 class="song-title title-in-list">${songsInObject[i].title}</h4>
@@ -251,347 +359,345 @@
 
 
             songListContainer.innerHTML = content;
-      
-            }
-            songMapToSide();
 
-            
+        }
+        songMapToSide();
 
-            const titleInList = document.querySelector('.title-in-list');
-            const authorInList = document.querySelector('.author-in-list');
 
-            const getThisTagValue = (songCase) => {
-                var songString = songCase.firstElementChild.firstElementChild.textContent;
-                songString = songString.replace(/\s+/g, ' ').trim();
-                PlayClickedSong(songString);
-            }
 
-            const PlayClickedSong = (str) => {
-                songsInObject.forEach((item,index) => {
-                    item.title = item.title
-                    
-                    if(item.title.includes(str)){
-                        if(!audio.paused){
-                        
-                            play.innerHTML = '<img src="./img/play-white.png" alt="play"/>';
-                            audio.pause();
+        const titleInList = document.querySelector('.title-in-list');
+        const authorInList = document.querySelector('.author-in-list');
 
-                            setTimeout(()=>{
-                            incrementDecrementValue = index; 
+        const getThisTagValue = (songCase) => {
+            var songString = songCase.firstElementChild.firstElementChild.textContent;
+            songString = songString.replace(/\s+/g, ' ').trim();
+            PlayClickedSong(songString);
+        }
+
+        const PlayClickedSong = (str) => {
+            songsInObject.forEach((item, index) => {
+                item.title = item.title
+
+                if (item.title.includes(str)) {
+                    if (!audio.paused) {
+
+                        play.innerHTML = '<i class="fa fa-play" aria-hidden="true"></i>';
+                        audio.pause();
+
+                        setTimeout(() => {
+                            incrementDecrementValue = index;
                             windowOnload(item);
-                            play.innerHTML = '<img src="./img/pause-white.png" alt="pause"/>';
-                            audio.play();  
+                            play.innerHTML = '<i class="fa fa-pause" aria-hidden="true"></i>';
+                            audio.play();
                             audio.addEventListener("timeupdate", countDown, false);
                             audio.addEventListener("timeupdate", countUp, false);
                             return;
-                        },500);   
-                        }else{
-                            play.innerHTML = '<img src="./img/play-white.png" alt="play"/>';
-                            audio.pause();
-                            incrementDecrementValue = index; 
-                            windowOnload(item);
-                            audio.addEventListener("timeupdate", countDown, false);
-                            audio.addEventListener("timeupdate", countUp, false);
-                            audio.addEventListener("ended", audioEnded);
-                        }
+                        }, 500);
+                    } else {
+                        play.innerHTML = '<i class="fa fa-play" aria-hidden="true"></i>';
+                        audio.pause();
+                        incrementDecrementValue = index;
+                        windowOnload(item);
+                        audio.addEventListener("timeupdate", countDown, false);
+                        audio.addEventListener("timeupdate", countUp, false);
+                        audio.addEventListener("ended", audioEnded);
+                    }
 
-                    }   
-                });
-            }
+                }
+            });
+        }
 
-            
-            const imageCoverFunction = (binding, url) => {
-                if(url == '') {
-                    binding.style.background = 'url(./img/image_cover_default.png)'
-                    binding.style.backgroundPosition = 'center';
-                    binding.style.backgroundSize = 'cover';
-                    binding.style.backgroundRepeat = 'no-repeat';
-                }else{ 
+
+        const imageCoverFunction = (binding, url) => {
+            if (url == '') {
+                binding.style.background = 'url(./img/image_cover_default.png)'
+                binding.style.backgroundPosition = 'center';
+                binding.style.backgroundSize = 'cover';
+                binding.style.backgroundRepeat = 'no-repeat';
+            } else {
                 binding.style.background = `url(${url})`;
                 binding.style.backgroundPosition = 'center';
                 binding.style.backgroundSize = 'cover';
                 binding.style.backgroundRepeat = 'no-repeat';
             }
-            }
-            
-            const windowOnload = (arr) => {
-                if(!arr){
-                    imageCoverFunction(imageCase, songsInObject[0].albumImageCover);
-                    title.textContent = songsInObject[0].title;
-                    author.textContent = songsInObject[0].author;
-                    imageCoverFunction(imageCover, songsInObject[0].imageCover);
-                    startTime.textContent = songsInObject[0].duration
-                    endTime.textContent = 0 +":"+ 0 + 0;
-                    audio = new Audio(songsInObject[0].source);
-                }
-                else{
+        }
+
+        const windowOnload = (arr) => {
+            if (!arr) {
+                imageCoverFunction(imageCase, songsInObject[0].albumImageCover);
+                title.textContent = songsInObject[0].title;
+                author.textContent = songsInObject[0].author;
+                imageCoverFunction(imageCover, songsInObject[0].imageCover);
+                startTime.textContent = songsInObject[0].duration
+                endTime.textContent = 0 + ":" + 0 + 0;
+                audio = new Audio(songsInObject[0].source);
+            } else {
                 imageCoverFunction(imageCase, arr.albumImageCover);
                 title.textContent = arr.title;
                 author.textContent = arr.author;
                 imageCoverFunction(imageCover, arr.imageCover);
                 startTime.textContent = arr.duration;
-                endTime.textContent = 0 +":"+ 0 + 0;
+                endTime.textContent = 0 + ":" + 0 + 0;
                 audio = new Audio(arr.source);
-                }
             }
+        }
 
 
-            forwardButton.addEventListener('click', incrementToNextSong);
-            backwardButton.addEventListener('click', decrementToNextSong);
+        forwardButton.addEventListener('click', incrementToNextSong);
+        backwardButton.addEventListener('click', decrementToNextSong);
 
 
-            //creating an array
-            const arr = (arr, value) => {
-                return arr[value];
-            }
+        //creating an array
+        const arr = (arr, value) => {
+            return arr[value];
+        }
 
-            function incrementToNextSong(){
-                if(!audio.paused){
-                    play.innerHTML = '<img src="./img/play-white.png" alt="play"/>';
-                    audio.pause();
+        function incrementToNextSong() {
+            if (!audio.paused) {
+                play.innerHTML = '<i class="fa fa-play" aria-hidden="true"></i>';
+                audio.pause();
 
-                    setTimeout(()=>{
+                setTimeout(() => {
                     incrementDecrementValue = incrementDecrementValue + 1;
-                    if(songsToDisplayArray == []) songsToDisplayArray.push(arr(songsInObject,incrementDecrementValue));
-                    else{
+                    if (songsToDisplayArray == []) songsToDisplayArray.push(arr(songsInObject, incrementDecrementValue));
+                    else {
                         songsToDisplayArray.pop();
-                        songsToDisplayArray.push(arr(songsInObject,incrementDecrementValue));
+                        songsToDisplayArray.push(arr(songsInObject, incrementDecrementValue));
                     }
-                    if(songsToDisplayArray[0] == undefined){
-                        incrementDecrementValue = songsInObject.length-1; 
+                    if (songsToDisplayArray[0] == undefined) {
+                        incrementDecrementValue = songsInObject.length - 1;
                         return;
                     }
                     windowOnload(songsToDisplayArray[0]);
-                    play.innerHTML = '<img src="./img/pause-white.png" alt="pause"/>';
-                   
+                    play.innerHTML = '<i class="fa fa-pause" aria-hidden="true"></i>';
+
                     audio.play();
                     audio.addEventListener("timeupdate", countDown, false);
                     audio.addEventListener("timeupdate", countUp, false);
                     audio.addEventListener("ended", audioEnded);
-                },500);   
-                }else{
-                    play.innerHTML = '<img src="./img/play-white.png" alt="play"/>';
-                    audio.pause();
+                }, 500);
+            } else {
+                play.innerHTML = '<i class="fa fa-play" aria-hidden="true"></i>';
+                audio.pause();
 
-                    incrementDecrementValue = incrementDecrementValue + 1;
-                    if(songsToDisplayArray == []) songsToDisplayArray.push(arr(songsInObject,incrementDecrementValue));
-                    else{
+                incrementDecrementValue = incrementDecrementValue + 1;
+                if (songsToDisplayArray == []) songsToDisplayArray.push(arr(songsInObject, incrementDecrementValue));
+                else {
+                    songsToDisplayArray.pop();
+                    songsToDisplayArray.push(arr(songsInObject, incrementDecrementValue));
+                }
+                if (songsToDisplayArray[0] == undefined) {
+                    incrementDecrementValue = songsInObject.length - 1;
+                    return;
+                }
+                windowOnload(songsToDisplayArray[0]);
+                audio.addEventListener("timeupdate", countDown, false);
+                audio.addEventListener("timeupdate", countUp, false);
+                audio.addEventListener("ended", audioEnded);
+            }
+
+
+        }
+
+        function decrementToNextSong() {
+            if (!audio.paused) {
+                play.innerHTML = '<i class="fa fa-play" aria-hidden="true"></i>';
+                audio.pause();
+
+                setTimeout(() => {
+                    incrementDecrementValue = incrementDecrementValue - 1;
+                    if (songsToDisplayArray == []) songsToDisplayArray.push(arr(songsInObject, incrementDecrementValue));
+                    else {
                         songsToDisplayArray.pop();
-                        songsToDisplayArray.push(arr(songsInObject,incrementDecrementValue));
+                        songsToDisplayArray.push(arr(songsInObject, incrementDecrementValue));
                     }
-                    if(songsToDisplayArray[0] == undefined){
-                        incrementDecrementValue = songsInObject.length-1; 
+                    if (songsToDisplayArray[0] == undefined) {
+                        incrementDecrementValue = songsInObject.indexOf(songsInObject[0]);
                         return;
                     }
                     windowOnload(songsToDisplayArray[0]);
+                    play.innerHTML = '<i class="fa fa-pause" aria-hidden="true"></i>';
+                    audio.play();
+
                     audio.addEventListener("timeupdate", countDown, false);
                     audio.addEventListener("timeupdate", countUp, false);
                     audio.addEventListener("ended", audioEnded);
+                }, 500);
+            } else {
+                play.innerHTML = '<i class="fa fa-play" aria-hidden="true"></i>';
+                audio.pause();
+                incrementDecrementValue = incrementDecrementValue - 1;
+                if (songsToDisplayArray == []) songsToDisplayArray.push(arr(songsInObject, incrementDecrementValue));
+                else {
+                    songsToDisplayArray.pop();
+                    songsToDisplayArray.push(arr(songsInObject, incrementDecrementValue));
                 }
-
-                   
+                if (songsToDisplayArray[0] == undefined) {
+                    incrementDecrementValue = songsInObject.indexOf(songsInObject[0]);
+                    return;
+                }
+                windowOnload(songsToDisplayArray[0]);
+                audio.addEventListener("timeupdate", countDown, false);
+                audio.addEventListener("timeupdate", countUp, false);
+                audio.addEventListener("ended", audioEnded);
             }
 
-            function decrementToNextSong(){
-                    if(!audio.paused){
-                            play.innerHTML = '<img src="./img/play-white.png" alt="play">';
-                            audio.pause();
+        }
 
-                            setTimeout(()=>{
-                            incrementDecrementValue = incrementDecrementValue - 1;
-                            if(songsToDisplayArray == []) songsToDisplayArray.push(arr(songsInObject,incrementDecrementValue));
-                            else{
-                                songsToDisplayArray.pop();
-                                songsToDisplayArray.push(arr(songsInObject,incrementDecrementValue));
-                            }
-                            if(songsToDisplayArray[0] == undefined){
-                            incrementDecrementValue = songsInObject.indexOf(songsInObject[0]); 
-                            return;
-                        }
-                            windowOnload(songsToDisplayArray[0]);
-                            play.innerHTML = '<img src="./img/pause-white.png" alt="pause"/>';
-                            audio.play();
 
-                            audio.addEventListener("timeupdate", countDown, false);
-                            audio.addEventListener("timeupdate", countUp, false);
-                            audio.addEventListener("ended", audioEnded);
-                        },500);   
-                    }else{
-                        play.innerHTML = '<img src="./img/play-white.png" alt="play">';
-                            audio.pause();
-                            incrementDecrementValue = incrementDecrementValue - 1;
-                            if(songsToDisplayArray == []) songsToDisplayArray.push(arr(songsInObject,incrementDecrementValue));
-                            else{
-                                songsToDisplayArray.pop();
-                                songsToDisplayArray.push(arr(songsInObject,incrementDecrementValue));
-                            }
-                            if(songsToDisplayArray[0] == undefined){
-                            incrementDecrementValue = songsInObject.indexOf(songsInObject[0]); 
-                            return;
-                        }
-                            windowOnload(songsToDisplayArray[0]);
-                            audio.addEventListener("timeupdate", countDown, false);
-                            audio.addEventListener("timeupdate", countUp, false);
-                            audio.addEventListener("ended", audioEnded);
-                    }
 
-                      
-            }
-            
+        //Moving Bar
+        function pixelPerSecond() { // this is returning approximately 2 pixels per second
+            // const val = currentAudio.duration;
+            // console.log(val, 'this is val');
+            return Number(window.getComputedStyle(bar).getPropertyValue("width").replace("px", "")) / audio.duration;
+        }
 
-                            
-            //Moving Bar
-            function pixelPerSecond(){// this is returning approximately 2 pixels per second
-                // const val = currentAudio.duration;
-                // console.log(val, 'this is val');
-                return Number(window.getComputedStyle(bar).getPropertyValue("width").replace("px", "")) / audio.duration;
-            }
-
-            function currentTimeOnSync(){
-            if(!window.grabbing){
+        function currentTimeOnSync() {
+            if (!window.grabbing) {
                 // console.log(currentAudio.currentTime); // this value keeps running and doesn't stop
-                currentTime.style.width = (audio.currentTime * pixelPerSecond()) + "px";// this is what is moving the BAR.
+                currentTime.style.width = (audio.currentTime * pixelPerSecond()) + "px"; // this is what is moving the BAR.
             }
-            }// Ask this question on google. How to calculate the moving bar to move with the music from beginning to the 
-            // end.
+        } // Ask this question on google. How to calculate the moving bar to move with the music from beginning to the 
+        // end.
 
 
-            function currentGrabTimeUpdate(event){
+        function currentGrabTimeUpdate(event) {
             let eventPageX = event.pageX || event.touches[0].pageX;
-            if((eventPageX - barPosition) > Number(window.getComputedStyle(bar).getPropertyValue("width").replace("px",""))){
+            if ((eventPageX - barPosition) > Number(window.getComputedStyle(bar).getPropertyValue("width").replace("px", ""))) {
                 currentTime.style.width = window.getComputedStyle(bar).getPropertyValue("width");
-            }else if((eventPageX - barPosition) < 0){
+            } else if ((eventPageX - barPosition) < 0) {
                 currentTime.style.width = 0;
-            }else{
+            } else {
                 currentTime.style.width = (eventPageX - barPosition) + "px";
             }
-            }
+        }
 
 
 
-            //this funtion id for holding or pressing the bar
-            function barStart(event){
-                //console.log(event.pageX, ' event target.');
-            if(event.target == bar){
-                let eventPageX = event.pageX || event.touches[0].pageX;// this is not a constant value
+        //this funtion id for holding or pressing the bar
+        function barStart(event) {
+            //console.log(event.pageX, ' event target.');
+            if (event.target == bar) {
+                let eventPageX = event.pageX || event.touches[0].pageX; // this is not a constant value
                 window.grabbing = true;
-                
-                currentTime.style.width = (eventPageX - barPosition) + "px";// you are moving the width of the blue container here
+
+                currentTime.style.width = (eventPageX - barPosition) + "px"; // you are moving the width of the blue container here
                 //which is currentTime
-                overlay.style.display = "block";//this overlay is what i dont understand
-                
-                if(event.type == 'touchstart'){
-                window.addEventListener("touchmove", currentGrabTimeUpdate);
-                }else{
-                window.addEventListener("mousemove", currentGrabTimeUpdate);// this is dragging the element
+                overlay.style.display = "block"; //this overlay is what i dont understand
+
+                if (event.type == 'touchstart') {
+                    window.addEventListener("touchmove", currentGrabTimeUpdate);
+                } else {
+                    window.addEventListener("mousemove", currentGrabTimeUpdate); // this is dragging the element
                 }
                 audio.muted = true;
             }
-            }
+        }
 
-            function barEnd(event){
-            if(window.grabbing === true){
+        function barEnd(event) {
+            if (window.grabbing === true) {
                 window.grabbing = false;
                 audio.muted = false;
-                audio.currentTime = Number(currentTime.style.width.replace("px","")) / pixelPerSecond();
+                audio.currentTime = Number(currentTime.style.width.replace("px", "")) / pixelPerSecond();
                 overlay.style.display = "none";
-                
-                if(event.type == 'touchstart'){
-                window.removeEventListener("touchmove", currentGrabTimeUpdate);
-                }else{
-                window.removeEventListener("mousemove", currentGrabTimeUpdate);
+
+                if (event.type == 'touchstart') {
+                    window.removeEventListener("touchmove", currentGrabTimeUpdate);
+                } else {
+                    window.removeEventListener("mousemove", currentGrabTimeUpdate);
                 }
             }
+        }
+
+
+        window.addEventListener("mousedown", barStart); //this is for moving the bar when using mouse
+        window.addEventListener("mouseup", barEnd); //this is for the bar when not using the mouse
+
+        window.addEventListener("touchstart", barStart); //this is for tablet
+        window.addEventListener("touchend", barEnd); //this is for tablet
+
+
+        (function onLoad() {
+            playing = setInterval(currentTimeOnSync, 1);
+            windowOnload()
+        })();
+
+
+        play.addEventListener('click', function() {
+            if (audio.paused) {
+                play.innerHTML = ' <i class="fa fa-pause" aria-hidden="true"></i>';
+                audio.play();
+            } else {
+                play.innerHTML = '<i class="fa fa-play" aria-hidden="true"></i>';
+                audio.pause();
             }
+        });
 
 
-            window.addEventListener("mousedown", barStart);//this is for moving the bar when using mouse
-            window.addEventListener("mouseup", barEnd);//this is for the bar when not using the mouse
+        let volumeRamge = audio.volume = 0.5;
 
-            window.addEventListener("touchstart", barStart);//this is for tablet
-            window.addEventListener("touchend", barEnd);//this is for tablet
-
-                        
-            (function onLoad(){
-                playing = setInterval(currentTimeOnSync, 1);
-                windowOnload()
-            })();
-
-
-            play.addEventListener('click', function(){
-                if(audio.paused){
-                    play.innerHTML = '<img src="./img/pause-white.png" alt="pause"/>';
-                    audio.play(); 
-                }else{
-                    play.innerHTML = '<img src="./img/play-white.png" alt="play"/>';
-                    audio.pause(); 
-                }
-            });
-
-
-            let volumeRamge = audio.volume = 0.5;
-
-            window.addEventListener('keydown', function(event){
-                if(event.keyCode === 32 && audio.paused){
-                    play.innerHTML = '<img src="./img/pause-white.png" alt="pause"/>';
-                    audio.play();
-                } else if(event.keyCode === 32 && !audio.paused){
-                    play.innerHTML = '<img src="./img/play-white.png" alt="play"/>';
-                    audio.pause(); 
-                }else if(event.keyCode === 37){
-                    decrementToNextSong();  
-                }else if(event.keyCode === 39){
-                        incrementToNextSong();
-                }else if(event.keyCode === 38){
-                    audio.volume = audio.volume + 0.1;
-                }else if(event.keyCode === 40){
-                    audio.volume = audio.volume - 0.1;
-                }
-            });
-
-
-
-
-            // CountDown
-            audio.addEventListener("timeupdate", countDown, false);
-
-            function countDown() {
-                    let duration = parseInt( audio.duration );
-  
-                    let currentTime = parseInt( audio.currentTime ),
-                    timeLeft = duration - currentTime,
-                    s, m;
-                    
-                    s = timeLeft % 60;
-                    m = Math.floor( timeLeft / 60 ) % 60;
-                    
-                    s = s < 10 ? "0"+s : s;
-                    m = m < 10 ? "0"+m : m;
-
-                    startTime.innerHTML = m+":"+s;
+        window.addEventListener('keydown', function(event) {
+            if (event.keyCode === 32 && audio.paused) {
+                play.innerHTML = '<i class="fa fa-pause" aria-hidden="true"></i>';
+                audio.play();
+            } else if (event.keyCode === 32 && !audio.paused) {
+                play.innerHTML = '<i class="fa fa-play" aria-hidden="true"></i>';
+                audio.pause();
+            } else if (event.keyCode === 37) {
+                decrementToNextSong();
+            } else if (event.keyCode === 39) {
+                incrementToNextSong();
+            } else if (event.keyCode === 38) {
+                audio.volume = audio.volume + 0.1;
+            } else if (event.keyCode === 40) {
+                audio.volume = audio.volume - 0.1;
             }
+        });
 
 
 
-            // Countup
-            audio.addEventListener("timeupdate", countUp, false);
-            
-            function countUp() {
-                var s = parseInt(audio.currentTime % 60);
-                var m = parseInt((audio.currentTime / 60));
-                if (s < 10) {
-                    endTime.innerHTML = m + ':0' + s;
-                }
-                else {
-                    endTime.innerHTML = m + ':' + s;
-                }
+
+        // CountDown
+        audio.addEventListener("timeupdate", countDown, false);
+
+        function countDown() {
+            let duration = parseInt(audio.duration);
+
+            let currentTime = parseInt(audio.currentTime),
+                timeLeft = duration - currentTime,
+                s, m;
+
+            s = timeLeft % 60;
+            m = Math.floor(timeLeft / 60) % 60;
+
+            s = s < 10 ? "0" + s : s;
+            m = m < 10 ? "0" + m : m;
+
+            startTime.innerHTML = m + ":" + s;
+        }
+
+
+
+        // Countup
+        audio.addEventListener("timeupdate", countUp, false);
+
+        function countUp() {
+            var s = parseInt(audio.currentTime % 60);
+            var m = parseInt((audio.currentTime / 60));
+            if (s < 10) {
+                endTime.innerHTML = m + ':0' + s;
+            } else {
+                endTime.innerHTML = m + ':' + s;
             }
+        }
 
-            
-            audio.addEventListener("ended", audioEnded);
-            function audioEnded(){
-            play.innerHTML = '<img src="./img/play-white.png" alt="play"/>';
-            }
+
+        audio.addEventListener("ended", audioEnded);
+
+        function audioEnded() {
+            play.innerHTML = '<i class="fa fa-play" aria-hidden="true"></i>';
+        }
     </script>
 </body>
 
