@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/miraking/mi-play.git"
+    "url": "git+https://github.com/Micode360/mi-play.git"
   },
   "author": "Abaye Miracle Hesed",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/miraking/mi-play/issues"
+    "url": "https://github.com/Micode360/mi-play/issues"
   },
-  "homepage": "https://github.com/miraking/mi-play",
+  "homepage": "https://github.com/Micode360/mi-play",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
