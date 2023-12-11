@@ -1,8 +1,6 @@
 # mi-play
 ![miplay background](./public/img/miplay.png)
 
-> This wesite is live at [mi-play.herokuapp.com](https://mi-play.herokuapp.com/)
-
 >Needs more update. More stuffs to fix.
 
 ## Description
